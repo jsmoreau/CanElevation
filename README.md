@@ -5,7 +5,7 @@ This repository contains usage examples of the CanElevation Series products crea
 Ce dépôt contient des exemples d'utilisation des produits de la Série CanÉlévation créée pour appuyer la [Stratégie nationale de données d’élévation](https://ressources-naturelles.canada.ca/carte-outils-publications/imagerie-satellitaire-donnees-elevation-photos-aeriennes/strategie-nationale-donnees-elevation) mise en oeuvre par [RNCan](https://ressources-naturelles.canada.ca/).
 
 ## License
-The examples are released under the Open Government License - Canada. See [LICENSE](./LICENSE.md) for more information.
+The examples are released under the [Open Government License - Canada](https://open.canada.ca/en/open-government-licence-canada).
 
-Les exemples sont publiés sous la licence Open Government License - Canada. Voir [LICENSE](./LICENSE_FR.md) pour plus d'informations.
+Les exemples sont publiés sous la [licence du gouvernement ouvert - Canada](https://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada).
 
