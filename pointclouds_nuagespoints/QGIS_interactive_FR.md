@@ -7,11 +7,10 @@ Les instructions sont compatibles avec la version **3.40**
 
 Étapes:
 * [Ajouter l'index des projets lidar](#ajouter-lindex-des-projets-lidar)
-* [Agrandir la carte sur une région d'intérêt](./agrandir-la-carte-sur-une-region-dinteret)
-* Ajouter l'index des tuiles lidar
-* Ouvrir une tuile lidar en 2D
-* Ouvrir une vue 3D sur la tuile
-* Autres outils d'intérêt
+* [Agrandir la carte sur une région d'intérêt](#agrandir-la-carte-sur-une-r%C3%A9gion-dint%C3%A9r%C3%AAt)
+* [Ajouter l'index des tuiles lidar](#ajouter-lindex-des-tuiles-lidar)
+* [Ouvrir une tuile lidar en 2D](#ouvrir-une-tuile-lidar-en-2d)
+* [Ouvrir une vue 3D sur la tuile](#ouvrir-une-vue-3d-sur-la-tuile)
 
 ## Ajouter l'index des projets lidar
 Cliquer sur l'icône afin d'accéder au *Datasource Manager*.
