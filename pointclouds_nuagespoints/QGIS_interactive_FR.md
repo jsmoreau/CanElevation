@@ -6,7 +6,7 @@ Ce tutoriel montre comment trouver et charger les nuages de points a l'aide du l
 Les instructions sont compatibles avec la version **3.40**
 
 Étapes:
-* [Ajouter l'index des projets lidar](./#ajouter-lindex-des-projets-lidar)
+* [Ajouter l'index des projets lidar](#ajouter-lindex-des-projets-lidar)
 * [Agrandir la carte sur une région d'intérêt](./agrandir-la-carte-sur-une-region-dinteret)
 * Ajouter l'index des tuiles lidar
 * Ouvrir une tuile lidar en 2D
