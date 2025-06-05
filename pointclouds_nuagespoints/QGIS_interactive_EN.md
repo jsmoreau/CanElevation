@@ -1,6 +1,6 @@
 [Version en français ici!](./QGIS_interactive_FR.md)
 
-# Using the Lidar [Point Cloud Product - CanElevation Series](https://open.canada.ca/data/en/dataset/7069387e-9986-4297-9f55-0288e9676947) in QGIS
+# Using the [LiDAR Point Clouds - CanElevation Series Lidar](https://open.canada.ca/data/en/dataset/7069387e-9986-4297-9f55-0288e9676947) product in QGIS
 
 This tutorial shows how to find and load point clouds using [QGIS software](https://qgis.org/).
 
