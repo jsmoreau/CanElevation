@@ -7,7 +7,7 @@ This folder contains usage examples of the [LiDAR Point Clouds](https://open.can
 
 * [DEM_from_COPC_lidar_EN.ipynb](./DEM_from_COPC_lidar_EN.ipynb)
 
-  This notebook focused on generating a Digital Elevation Model (DEM) from a COPC (Cloud Optimized Point Cloud) lidar data file.
+  This notebook focuses on generating a Digital Elevation Model (DEM) from a COPC (Cloud Optimized Point Cloud) lidar data file.
 
 * [Get_Projects_Tiles_by_AOI_EN.ipynb](./Get_Projects_Tiles_by_AOI_EN.ipynb)
 
