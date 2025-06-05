@@ -7,11 +7,11 @@ This tutorial shows how to find and load point clouds using [QGIS software](http
 The instructions are compatible with version 3.40.
 
 Steps:
-* Add the lidar project index
-* Zoom in on a region of interest
-* Add the lidar tile index
-* Open a lidar tile in 2D
-* Open a 3D view of the tile
+* [Add the lidar project index](#add-the-lidar-project-index)
+* [Zoom in on a region of interest](#zoom-in-on-a-region-of-interest)
+* [Add the lidar tile index](#add-the-lidar-tile-index)
+* [Open a lidar tile in 2D](#open-a-lidar-tile-in-2d)
+* [Open a 3D view of the tile](#open-a-3d-view-of-the-tile)
 
 ## Add the lidar project index
 
