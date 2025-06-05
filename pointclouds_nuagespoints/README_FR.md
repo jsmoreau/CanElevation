@@ -13,3 +13,9 @@ Ce dossier contient des exemples d'utilisation du produit [Nuages de points lida
 
   Ce notebook montre comment récupérer des projets lidar et des tuiles sur la base d'une zone d'intérêt (AOI).
 
+## Sommaire des documents pratiques
+
+* [QGIS_interactive_FR.md](./QGIS_interactive_FR.md)
+
+  Document démontrant comment charger un nuage de points et le visualiser en 2D et 3D.
+
