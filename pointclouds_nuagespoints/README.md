@@ -13,3 +13,9 @@ This folder contains usage examples of the [LiDAR Point Clouds](https://open.can
 
   This notebook demonstrate how to retrieve lidar projects and tiles based on an Area of Interest (AOI).
 
+## Summary of how-to documents
+
+* [QGIS_interactive_EN.md](./QGIS_interactive_EN.md)
+
+  This document demonstrate the use of QGIS to load lidar COPC files using both the 2D and 3D views.
+
