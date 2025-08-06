@@ -94,12 +94,17 @@ pdal translate input_utm10n_2002.laz output_utm10n_cgvd2013_2010.laz --filters.r
 
 ## Verifying Transformation Results
 
-After transforming point cloud data, it is important to validate the results. Methods include:
+Once the point cloud has been transformed, it is recommended to perform an independent verification to ensure that the vertical transformation has been correctly applied. Here are two complementary validation methods: inspection in QGIS and comparison with values calculated using the [GPS.H](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php) tool provided by the [Canadian Geodetic Survey](https://natural-resources.canada.ca/science-data/science-research/geomatics/geodetic-reference-systems).
 
-1. Examining statistics of elevation differences
-2. Visual inspection in point cloud viewers
-3. Comparison with known control points
-4. Cross-validation using the GPS.H tool from the Canadian Geodetic Survey
+### Verification Steps in QGIS
+
+1. Open the input point cloud (in CGVD28) and the converted point cloud (in CGVD2013) in QGIS.
+2. Use the 'Identify Features' tool or the point cloud profile tool to query elevation values at the same location.
+3. Compare the obtained values: they should show a difference corresponding to the variation between the two geoids at that location, according to the grids used in the transformation.
+
+### Validation with the GPS.H Tool
+
+After completing the analysis in QGIS, you can confirm the validity of the converted elevations by querying the same XY coordinate in the [GPS.H tool](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php?locale=en) from the [Canadian Geodetic Survey](https://natural-resources.canada.ca/science-data/science-research/geomatics/geodetic-reference-systems). This will confirm that the vertical transformation of the point cloud has worked correctly.
 
 
 

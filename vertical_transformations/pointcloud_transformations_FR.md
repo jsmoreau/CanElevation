@@ -92,9 +92,14 @@ pdal translate input_utm10n_2002.laz output_utm10n_cgvd2013_2010.laz --filters.r
 
 ## Vérification du résultat de la transformation
 
-Après avoir transformé des nuages de points, il est important de valider les résultats. Les méthodes incluent :
+Une fois le nuage de points transformé, il est recommandé de procéder à une vérification indépendante afin de s'assurer que la transformation verticale a été correctement appliquée. Voici deux méthodes complémentaires de validation : l'inspection dans QGIS et la comparaison avec les valeurs calculées à l'aide de l'outil [GPS.H](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php?locale=fr) fourni par les [Levés géodésiques du Canada](https://ressources-naturelles.canada.ca/science-donnees/science-recherche/geomatique/science-recherche-systemes-reference-geodesique).
 
-1. Examen des statistiques des différences d'altitude
-2. Inspection visuelle dans des visualiseurs de nuages de points
-3. Comparaison avec des points de contrôle connus
-4. Validation croisée à l'aide de l'outil GPS.H des Levés géodésiques du Canada
+### Étapes de vérification dans QGIS
+
+1. Ouvrir le nuage de points d'entrée (en CGVD28) et le nuage de points converti (en CGVD2013) dans QGIS.
+2. Utiliser l'outil 'Identifier les entités' ou l'outil de profil de nuage de points pour interroger les valeurs d'altitude au même emplacement.
+3. Comparer les valeurs obtenues : elles devraient présenter une différence correspondant à la variation entre les deux géoïdes à cet emplacement, selon les grilles utilisées dans la transformation.
+
+### Validation avec l'outil GPS.H
+
+Une fois l'analyse dans QGIS complétée, vous pouvez confirmer la validité des altitudes converties en interrogeant la même coordonnée XY dans l'[outil GPS.H](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php?locale=fr) des [Levés géodésiques du Canada](https://ressources-naturelles.canada.ca/science-donnees/science-recherche/geomatique/science-recherche-systemes-reference-geodesique). Cela confirmera que la transformation verticale du nuage de points a été correctement appliquée.
