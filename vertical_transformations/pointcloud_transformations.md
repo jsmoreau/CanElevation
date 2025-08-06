@@ -1,6 +1,7 @@
 ![image](https://github.com/user-attachments/assets/7fb631a8-8405-4592-9897-991f8123cd02)
 # Vertical Transformations for Point Clouds ([French version](./pointcloud_transformations_FR.md))
 
+This guide demonstrates how to perform vertical and epoch transformations on pointclouds data.
 ## Transformation Scenarios
 
 We cover the following transformation scenarios:
@@ -65,3 +66,4 @@ After transforming point cloud data, it is important to validate the results. Me
 2. Visual inspection in point cloud viewers
 3. Comparison with known control points
 4. Cross-validation using the GPS.H tool from the Canadian Geodetic Survey
+
