@@ -13,6 +13,41 @@ We cover the following transformation scenarios:
 
 Each scenario is illustrated with examples using both PROJ string notation and NRCAN URN notation in the next section.
 
+## Notation Formats for Vertical Transformations
+
+Before doing transformations, it is important to understand the two notations this tutorial uses to specify coordinate reference systems and vertical datums in PDAL and PROJ:
+
+### PROJ String Notation
+
+The PROJ string notation uses a combination of EPSG codes and geoid grid files to define both the horizontal and vertical reference systems. For example:
+
+```bash
++init=EPSG:2958 +geoidgrids=ca_nrc_HT2_2010v70.tif
+```
+
+- `+init=EPSG:xxxx` specifies the horizontal coordinate system (e.g., UTM zone, MTM).
+- `+geoidgrids=...` points to the geoid grid file that defines the vertical datum and epoch.
+- This notation is widely supported and allows precise control over the transformation parameters.
+
+### NRCAN PROJ URN Notation
+
+NRCan has worked with the PROJ development team to facilitate epoch and vertical datum conversions. Starting with PROJ 9.6, specific `CoordinateMetadata` definitions were added to PROJ, allowing users to reference complex Canadian coordinate systems and vertical datums using a URN.
+
+- URNs are supported natively by PROJ.
+- The full list of available NRCAN definitions can be queried using:
+  ```bash
+  sqlite3 %PROJ_DATA%\proj.db "select code from coordinate_metadata where auth_name = 'NRCAN';"
+  ```
+- The URN must be formatted as:
+  ```
+  urn:ogc:def:coordinateMetadata:NRCAN::<code>
+  ```
+  where `<code>` is the identifier from the database.
+
+This notation simplifies the specification of Canadian coordinate systems, including epoch and vertical datum, and ensures consistency with official NRCAN definitions.
+
+---
+
 ## Performing Transformations with PDAL
 
 [PDAL (Point Data Abstraction Library)](https://pdal.io/) is a powerful tool for processing point cloud data. We use its `translate` command with the `filters.reprojection` filter to perform vertical transformations.
@@ -56,8 +91,6 @@ pdal translate input_utm10n_2002.laz output_utm10n_cgvd2013_2010.laz --filters.r
 ```bash
 pdal translate input_utm10n_2002.laz output_utm10n_cgvd2013_2010.laz --filters.reprojection.in_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2002_UTM10_CGVD28_2002" --filters.reprojection.out_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_UTM10_CGVD2013_2010"
 ```
-
-> Note: NRCAN URNs are specific to the combination of projection, epoch, and vertical system. Refer to NRCAN or PROJ documentation for the exact identifiers for your use case.
 
 ## Verifying Transformation Results
 

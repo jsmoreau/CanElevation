@@ -11,9 +11,44 @@ Nous couvrons les scénarios de transformation suivants :
 
 Chaque scénario est illustré avec des exemples utilisant la notation PROJ string et la notation URN NRCAN dans la section suivante.
 
+## Formats de notation pour les transformations verticales
+
+Avant d'effectuer les transformations, il est important de comprendre les deux notations utilisées dans ce tutoriel pour spécifier les systèmes de référence de coordonnées et les systèmes altimétriques dans PDAL et PROJ :
+
+### Notation PROJ string
+
+La notation PROJ string utilise une combinaison de codes EPSG et de fichiers de grille de géoïde pour définir à la fois le système de référence horizontal et vertical. Par exemple :
+
+```bash
++init=EPSG:2958 +geoidgrids=ca_nrc_HT2_2010v70.tif
+```
+
+- `+init=EPSG:xxxx` spécifie le système de coordonnées horizontal (ex. : UTM, MTM).
+- `+geoidgrids=...` pointe vers le fichier de grille de géoïde qui définit le système vertical et l'époque.
+- Cette notation est largement supportée et permet un contrôle précis des paramètres de transformation.
+
+### Notation URN NRCAN PROJ
+
+RNCan a collaboré avec l'équipe de développement PROJ pour faciliter les conversions d'époque et de système vertical. Depuis PROJ 9.6, des définitions spécifiques `CoordinateMetadata` ont été ajoutées à PROJ, permettant aux utilisateurs de référencer des systèmes canadiens complexes à l'aide d'un URN.
+
+- Les URN sont supportés nativement par PROJ.
+- La liste complète des définitions NRCAN disponibles peut être obtenue avec :
+  ```bash
+  sqlite3 %PROJ_DATA%\proj.db "select code from coordinate_metadata where auth_name = 'NRCAN';"
+  ```
+- Le format du URN est :
+  ```
+  urn:ogc:def:coordinateMetadata:NRCAN::<code>
+  ```
+  où `<code>` est l'identifiant issu de la base de données.
+
+Cette notation simplifie la spécification des systèmes canadiens, incluant l'époque et le système vertical, et assure la cohérence avec les définitions officielles de RNCan.
+
+---
+
 ## Réaliser les transformations avec PDAL
 
-PDAL (Point Data Abstraction Library) est un outil puissant pour le traitement des nuages de points. Nous utilisons sa commande `translate` avec le filtre `filters.reprojection` pour effectuer les transformations verticales.
+[PDAL (Point Data Abstraction Library)](https://pdal.io/) est un outil puissant pour le traitement des nuages de points. Nous utilisons sa commande `translate` avec le filtre `filters.reprojection` pour effectuer les transformations verticales.
 
 ## Travailler avec différentes époques
 
@@ -54,8 +89,6 @@ pdal translate input_utm10n_2002.laz output_utm10n_cgvd2013_2010.laz --filters.r
 ```bash
 pdal translate input_utm10n_2002.laz output_utm10n_cgvd2013_2010.laz --filters.reprojection.in_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2002_UTM10_CGVD28_2002" --filters.reprojection.out_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_UTM10_CGVD2013_2010"
 ```
-
-> Remarque : Les URN NRCAN sont spécifiques à la combinaison de projection, d'époque et de système vertical. Consultez la documentation NRCAN ou PROJ pour les identifiants exacts selon votre cas d'utilisation.
 
 ## Vérification du résultat de la transformation
 
