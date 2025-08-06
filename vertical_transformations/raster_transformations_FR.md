@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/7fb631a8-8405-4592-9897-991f8123cd02)
 # Transformations verticales sur matrices (raster) ([Version en anglais](./raster_transformations.md))
 
 Ce guide démontre comment effectuer des transformations verticales sur des modèles numériques d'élévation (MNE) dans le contexte canadien, en particulier la conversion entre les systèmes altimétriques CGVD28 et CGVD2013.
