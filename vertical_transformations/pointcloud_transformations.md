@@ -50,7 +50,7 @@ This notation simplifies the specification of Canadian coordinate systems, inclu
 
 ## Performing Transformations with PDAL
 
-[PDAL (Point Data Abstraction Library)](https://pdal.io/) is a powerful tool for processing point cloud data. We use its `translate` command with the `filters.reprojection` filter to perform vertical transformations.
+[PDAL (Point Data Abstraction Library)](https://pdal.io/) is a powerful tool for processing point cloud data. We use its `translate` command with the `filters.reprojection` filter to perform transformations.
 
 ## Working with Different Epochs
 
@@ -100,5 +100,6 @@ After transforming point cloud data, it is important to validate the results. Me
 2. Visual inspection in point cloud viewers
 3. Comparison with known control points
 4. Cross-validation using the GPS.H tool from the Canadian Geodetic Survey
+
 
 
