@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/7fb631a8-8405-4592-9897-991f8123cd02)
 # Raster Vertical Transformations ([French version](./raster_transformations_FR.md))
 
 This guide demonstrates how to perform vertical transformations on Digital Elevation Models (DEMs) in the Canadian context, specifically converting between CGVD28 and CGVD2013 vertical datums.

@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/7fb631a8-8405-4592-9897-991f8123cd02)
 # Préparation de l'environnement pour les transformations verticales ([Version en anglais](./environment_setup.md))
 
 Ce guide explique comment configurer l'environnement logiciel nécessaire pour effectuer des transformations verticales de données géospatiales au Canada.
