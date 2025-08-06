@@ -18,13 +18,13 @@ gdalwarp -s_srs "+init=EPSG:3158 +geoidgrids=ca_nrc_HT2_2010v70.tif" -t_srs "+in
 
 - In this example, the NAD83(CSRS) / UTM zone 14N (EPSG:3158) projection is used, for both input and output. Additionally, geoid grids referenced to the 2010 epoch are used. To perform the reverse transformation (i.e., CGVD2013 to CGVD28), simply invert the geoid grids.
 
-- This gdalwarp command applies the transformation to 1 DEM at a time. To perform the same transformation on all DEMs in a folder, you can use and adapt the .bat file available in the sample_data/raster directory.
+- This gdalwarp command applies the transformation to a single DEM at a time. To perform the same transformation on all DEMs in a folder, you can use and adapt the [.bat file](./scripts/cgvd2013_to_cgvd28_entirefolder.bat) available in the scripts directory.
 
 - When performing a vertical transformation, it is generally recommended to use the geoid grid corresponding to the epoch of the horizontal reference system associated with the dataset. However, the differences due to an epoch change -- for example, between 1997 and 2010 in the context of NAD83(CSRS) -- are generally on the order of a few centimeters across the country. Their impact may therefore be negligible for a DEM, especially if the resolution and vertical accuracy of the DEM are not sufficient to detect such a variation.
 
 ## Verifying the Transformation Result
 
-Once the DEM is converted, it is recommended to perform an independent verification to ensure that the vertical transformation has been correctly applied. Here are two complementary validation methods: inspection in QGIS and comparison with values calculated using the [GPS.H](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php) tool provided by the Canadian Geodetic Survey.
+Once the DEM is converted, it is recommended to perform an independent verification to ensure that the vertical transformation has been correctly applied. Here are two complementary validation methods: inspection in QGIS and comparison with values calculated using the [GPS.H](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php) tool provided by the [Canadian Geodetic Survey](https://natural-resources.canada.ca/science-data/science-research/geomatics/geodetic-reference-systems).
 
 ### Verification Steps in QGIS
 
@@ -38,6 +38,12 @@ Example comparison for a given coordinate:
 |--------------------|--------------------|--------------------|
 | 574 397.2 E, 5 491 330.3 N | 260.11 m | 259.73 m |
 
+<img width="699" height="477" alt="image" src="https://github.com/user-attachments/assets/a41b313a-4b2e-4da0-a1a5-7d59e7439ea9" />
+
+
 ### Validation with the GPS.H Tool
 
-After completing the analysis in QGIS, you can confirm the validity of the converted elevations by querying the same XY coordinate in the GPS.H tool from the Canadian Geodetic Survey. This will confirm that the vertical transformation of the DEM has worked correctly.
+After completing the analysis in QGIS, you can confirm the validity of the converted elevations by querying the same XY coordinate in the [GPS.H tool](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php?locale=en) from the [Canadian Geodetic Survey](https://natural-resources.canada.ca/science-data/science-research/geomatics/geodetic-reference-systems). This will confirm that the vertical transformation of the DEM has worked correctly.
+
+<img width="791" height="492" alt="image" src="https://github.com/user-attachments/assets/de08d738-e3f3-4d86-be47-9be2f5fabf3b" />
+
