@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/7fb631a8-8405-4592-9897-991f8123cd02)
 # Environment Setup for Vertical Transformations ([French version](./environment_setup_FR.md))
 
 This guide explains how to set up the necessary software environment to perform vertical transformations of geospatial data in Canada.
