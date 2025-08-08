@@ -10,7 +10,11 @@ L'exemple suivant permet de convertir les élévations d'un MNE de CGVD28 vers C
 Dans l'invite de commande OSGeo4W Shell, entrez la commande suivante en prenant soin d'adapter les répertoires et les noms des MNE utilisés :
 
 ```bash
-gdalwarp -s_srs "+init=EPSG:3158 +geoidgrids=ca_nrc_HT2_2010v70.tif" -t_srs "+init=EPSG:3158 +geoidgrids=ca_nrc_CGG2013an83.tif" D:\Tutoriel\DTM_CGVD28.tif D:\Tutoriel\DTM_CGVD2013.tif -co COMPRESS=LZW
+gdalwarp ^
+-s_srs "+init=EPSG:3158 +geoidgrids=ca_nrc_HT2_2010v70.tif" ^
+-t_srs "+init=EPSG:3158 +geoidgrids=ca_nrc_CGG2013an83.tif" ^
+-co COMPRESS=LZW ^
+D:\dev\CanElevation\vertical_transformations\sample_data\raster\dtm_utm14_CGVD28.tif ^ D:\dev\CanElevation\vertical_transformations\sample_data\raster\dtm_utm14_CGVD2013.tif
 ```
 
 ### Explications et autres considérations

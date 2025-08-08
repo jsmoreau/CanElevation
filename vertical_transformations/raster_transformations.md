@@ -10,7 +10,11 @@ The following example demonstrates how to convert elevations in a DEM from CGVD2
 In the OSGeo4W Shell command prompt, enter the following command, taking care to adapt the directories and DEM names:
 
 ```bash
-gdalwarp -s_srs "+init=EPSG:3158 +geoidgrids=ca_nrc_HT2_2010v70.tif" -t_srs "+init=EPSG:3158 +geoidgrids=ca_nrc_CGG2013an83.tif" D:\Tutoriel\DTM_CGVD28.tif D:\Tutoriel\DTM_CGVD2013.tif -co COMPRESS=LZW
+gdalwarp ^
+-s_srs "+init=EPSG:3158 +geoidgrids=ca_nrc_HT2_2010v70.tif" ^
+-t_srs "+init=EPSG:3158 +geoidgrids=ca_nrc_CGG2013an83.tif" ^
+-co COMPRESS=LZW ^
+D:\dev\CanElevation\vertical_transformations\sample_data\raster\dtm_utm14_CGVD28.tif ^ D:\dev\CanElevation\vertical_transformations\sample_data\raster\dtm_utm14_CGVD2013.tif
 ```
 
 ### Explanations and Other Considerations
