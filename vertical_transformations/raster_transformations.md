@@ -37,14 +37,17 @@ Example comparison for a given coordinate:
 
 | **XY Coordinates** | **CGVD28 DEM (Z)** | **CGVD2013 DEM (Z)** |
 |--------------------|--------------------|--------------------|
-| 574 397.2 E, 5 491 330.3 N | 260.11 m | 259.73 m |
+| 631 182 E, 5 519 465 N | 232.56 m | 232.18 m |
 
-<img width="699" height="477" alt="image" src="https://github.com/user-attachments/assets/a41b313a-4b2e-4da0-a1a5-7d59e7439ea9" />
+<img width="1035" height="614" alt="image" src="https://github.com/user-attachments/assets/8203eb85-f05b-4ec8-af91-7f393c40aa54" />
+
 
 
 ### Validation with the GPS.H Tool
 
 After completing the analysis in QGIS, you can confirm the validity of the converted elevations by querying the same XY coordinate in the [GPS.H tool](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php?locale=en) from the [Canadian Geodetic Survey](https://natural-resources.canada.ca/science-data/science-research/geomatics/geodetic-reference-systems). This will confirm that the vertical transformation of the DEM has worked correctly.
 
-<img width="791" height="492" alt="image" src="https://github.com/user-attachments/assets/de08d738-e3f3-4d86-be47-9be2f5fabf3b" />
+<img width="1187" height="731" alt="image" src="https://github.com/user-attachments/assets/8165ec3c-d070-4553-9a2b-5d6b5f724734" />
+
+
 
