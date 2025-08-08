@@ -34,12 +34,13 @@ Exemple de comparaison pour une coordonnée donnée :
 
 | **Coordonnées XY** | **MNE CGVD28 (Z)** | **MNE CGVD2013 (Z)** |
 |--------------------|--------------------|----------------------|
-| 574 397.2 E, 5 491 330.3 N | 260.11 m | 259.73 m |
+| 631 182 E, 5 519 465 N | 232.56 m | 232.18 m |
 
-<img width="699" height="477" alt="image" src="https://github.com/user-attachments/assets/a41b313a-4b2e-4da0-a1a5-7d59e7439ea9" />
+<img width="1035" height="614" alt="image" src="https://github.com/user-attachments/assets/8203eb85-f05b-4ec8-af91-7f393c40aa54" />
 
 ### Validation avec l'outil GPS.H
 
 Une fois l'analyse dans QGIS complétée, vous pouvez confirmer la validité des élévations converties en interrogeant la même coordonnée XY dans l'[outil GPS.H](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php?locale=fr) des Levés géodésiques du Canada. Cela confirmera que la transformation verticale du MNE a bien fonctionné.
 
-<img width="791" height="492" alt="image" src="https://github.com/user-attachments/assets/de08d738-e3f3-4d86-be47-9be2f5fabf3b" />
+<img width="1187" height="731" alt="image" src="https://github.com/user-attachments/assets/8165ec3c-d070-4553-9a2b-5d6b5f724734" />
+
