@@ -14,7 +14,8 @@ gdalwarp ^
 -s_srs "+init=EPSG:3158 +geoidgrids=ca_nrc_HT2_2010v70.tif" ^
 -t_srs "+init=EPSG:3158 +geoidgrids=ca_nrc_CGG2013an83.tif" ^
 -co COMPRESS=LZW ^
-D:\dev\CanElevation\vertical_transformations\sample_data\raster\dtm_utm14_CGVD28.tif ^ D:\dev\CanElevation\vertical_transformations\sample_data\raster\dtm_utm14_CGVD2013.tif
+D:\dev\CanElevation\vertical_transformations\sample_data\raster\dtm_utm14_CGVD28.tif ^
+D:\dev\CanElevation\vertical_transformations\sample_data\raster\dtm_utm14_CGVD2013.tif
 ```
 
 ### Explications et autres considérations
