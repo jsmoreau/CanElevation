@@ -83,15 +83,31 @@ Unfortunately, this transformation is not possible at the moment using the URN n
 
 **PROJ string notation:**
 ```bash
-pdal translate input_mtm7_1997.laz output_mtm7_cgvd2013_2010.laz --filters.reprojection.in_srs="+init=EPSG:2949 +geoidgrids=ca_nrc_HT2_1997v70.tif" --filters.reprojection.out_srs="+init=EPSG:2949 +geoidgrids=ca_nrc_CGG2013an83.tif"
+pdal translate ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\input_mtm7_cgvd28_1997.laz ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\output_mtm7_cgvd2013_2010.laz ^
+--filters.reprojection.in_srs="+init=EPSG:2949 +geoidgrids=ca_nrc_HT2_1997.tif" ^ --filters.reprojection.out_srs="+init=EPSG:2949 +geoidgrids=ca_nrc_CGG2013an83.tif" ^
+filters.reprojection
 ```
 
 **NRCAN URN notation:**
 ```bash
-pdal translate input_mtm7_1997.laz output_mtm7_cgvd2013_2010.laz --filters.reprojection.in_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_1997_MTM7_CGVD28_1997" --filters.reprojection.out_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_MTM7_CGVD2013_2010"
+pdal translate ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\input_mtm7_cgvd28_1997.laz ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\output_mtm7_cgvd2013_2010.laz ^
+ --filters.reprojection.in_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_1997_MTM7_HT2_1997" ^
+ --filters.reprojection.out_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_MTM7_CGVD2013_2010" ^
+ filters.reprojection
 ```
 
 ### Example 3: UTM 10N CGVD28 2002 → UTM 10N CGVD2013 2010
+
+<!-- Pour cette transformation, je m'attendais à ce que la transformation d'époque affecte également la position x, y.
+C'est seulement le z qui change dans les deux cas. J'ai validé avec gps-h et en utilisant HT2_2002_to_CGG2013, j'obtiens la même valeur de Z.
+Avec la notation PROJ, nous utilisons le epsg générique pour l'horizontal alors le résultat est correct.
+Avec la notation URN, le nom de l'objet coordinateMetadata suggère que l'époque est également considéré pour l'horizontal.
+Cependant, mes tests montrent que ce n'est pas le cas. Le résultat est identique à celui obtenu en utilisant la notation proj string.
+Il faudrait évaluer si la conversion en utilisant un proj pipeline fait la transformation d'époque en x et y. -->
 
 **PROJ string notation:**
 ```bash
