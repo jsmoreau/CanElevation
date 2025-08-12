@@ -60,13 +60,24 @@ For point clouds with centimeter-level accuracy, accounting for differences in e
 
 **PROJ string notation:**
 ```bash
-pdal translate input_utm17n_2010.laz output_utm17n_cgvd2013_2010.laz --filters.reprojection.in_srs="+init=EPSG:2958 +geoidgrids=ca_nrc_HT2_2010v70.tif" --filters.reprojection.out_srs="+init=EPSG:2958 +geoidgrids=ca_nrc_CGG2013an83.tif"
+pdal translate ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\input_utm17n_cgvd28_2010.laz ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\output_utm17n_cgvd2013_2010.laz ^
+--filters.reprojection.in_srs="+init=EPSG:2958 +geoidgrids=ca_nrc_HT2_2010v70.tif" ^
+--filters.reprojection.out_srs="+init=EPSG:2958 +geoidgrids=ca_nrc_CGG2013an83.tif" ^
+filters.reprojection
 ```
 
 **NRCAN URN notation:**
-```bash
-pdal translate input_utm17n_2010.laz output_utm17n_cgvd2013_2010.laz --filters.reprojection.in_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_UTM17_CGVD28_2010" --filters.reprojection.out_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_UTM17_CGVD2013_2010"
-```
+<!-- ```bash
+pdal translate ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\input_utm17n_cgvd28_2010.laz ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\output_utm17n_cgvd2013_2010.laz ^
+--filters.reprojection.in_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_UTM17_CGVD28_2010" ^
+--filters.reprojection.out_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_UTM17_CGVD2013_2010" ^
+filters.reprojection
+``` -->
+Unfortunately, this transformation is not possible at the moment using the URN notation. The coordinateMetadata object for UTM 17N CGVD28 2010 does not exist.
 
 ### Example 2: MTM 7 CGVD28 1997 → MTM 7 CGVD2013 2010
 
