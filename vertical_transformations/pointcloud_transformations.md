@@ -114,7 +114,13 @@ Avec la notation PROJ, nous utilisons le epsg générique pour l'horizontal alor
 
 Avec la notation URN, la transformation se fait correctement. On peut valider le résultat en combinant TRX pour le x et y et GPS-H pour le Z.
 
-Il faudrait revoir le format de ce tutoriel. Les transformations d'époques devraient être démontrées par l'utilisation des URN seulement. Il faudra également ajouter des définitions afin de couvrir tous les cas possibles.-->
+Il faudrait revoir le format de ce tutoriel. Les transformations d'époques devraient être démontrées par l'utilisation des URN seulement. Il faudra également ajouter des définitions afin de couvrir tous les cas possibles.
+
+!!! ATTENTION !!!
+
+Il faut fermer QGIS chaque fois que les fichiers ont été modifié. Il faut également enlever les copc du répertoire. Autrement, QGIS affiche parfois les mauvaises coordonnées quand on fait un get feature info sur les points. J'ai perdu plusieurs heures avant de le trouver.
+
+-->
 
 **PROJ string notation:**
 ```bash
