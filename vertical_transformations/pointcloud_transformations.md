@@ -33,6 +33,12 @@ The PROJ string notation uses a combination of EPSG codes and geoid grid files t
 
 NRCan has worked with the PROJ development team to facilitate epoch and vertical datum conversions. Starting with PROJ 9.6, specific `CoordinateMetadata` definitions were added to PROJ, allowing users to reference complex Canadian coordinate systems and vertical datums using a URN.
 
+<!-- Some definitions are missing but can be added by running que following command:
+```bash
+sqlite3 %PROJ_DATA%\proj.db ".read D:\dev\CanElevation\vertical_transformations\scripts\additionnal_coordinateMetadata.sql"
+``` -->
+
+
 - URNs are supported natively by PROJ.
 - The full list of available NRCAN definitions can be queried using:
   ```bash
@@ -103,20 +109,30 @@ D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\output_mtm7_
 ### Example 3: UTM 10N CGVD28 2002 → UTM 10N CGVD2013 2010
 
 <!-- Pour cette transformation, je m'attendais à ce que la transformation d'époque affecte également la position x, y.
-C'est seulement le z qui change dans les deux cas. J'ai validé avec gps-h et en utilisant HT2_2002_to_CGG2013, j'obtiens la même valeur de Z.
-Avec la notation PROJ, nous utilisons le epsg générique pour l'horizontal alors le résultat est correct.
-Avec la notation URN, le nom de l'objet coordinateMetadata suggère que l'époque est également considéré pour l'horizontal.
-Cependant, mes tests montrent que ce n'est pas le cas. Le résultat est identique à celui obtenu en utilisant la notation proj string.
-Il faudrait évaluer si la conversion en utilisant un proj pipeline fait la transformation d'époque en x et y. -->
+C'est seulement le z qui change dans lle cas de la notation PROJ. J'ai validé avec gps-h et en utilisant HT2_2002_to_CGG2013, j'obtiens la même valeur de Z.
+Avec la notation PROJ, nous utilisons le epsg générique pour l'horizontal alors je crois que le résultat est correct.
+
+Avec la notation URN, la transformation se fait correctement. On peut valider le résultat en combinant TRX pour le x et y et GPS-H pour le Z.
+
+Il faudrait revoir le format de ce tutoriel. Les transformations d'époques devraient être démontrées par l'utilisation des URN seulement. Il faudra également ajouter des définitions afin de couvrir tous les cas possibles.-->
 
 **PROJ string notation:**
 ```bash
-pdal translate input_utm10n_2002.laz output_utm10n_cgvd2013_2010.laz --filters.reprojection.in_srs="+init=EPSG:3157 +geoidgrids=ca_nrc_HT2_2002v70.tif" --filters.reprojection.out_srs="+init=EPSG:3157 +geoidgrids=ca_nrc_CGG2013an83.tif"
+pdal translate ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\input_utm10n_cgvd28_2002.laz ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\output_utm10n_cgvd2013_2010.laz ^
+--filters.reprojection.in_srs="+init=EPSG:3157 +geoidgrids=ca_nrc_HT2_2002v70.tif" ^
+--filters.reprojection.out_srs="+init=EPSG:3157 +geoidgrids=ca_nrc_CGG2013an83.tif" ^
+filters.reprojection
 ```
 
 **NRCAN URN notation:**
 ```bash
-pdal translate input_utm10n_2002.laz output_utm10n_cgvd2013_2010.laz --filters.reprojection.in_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2002_UTM10_CGVD28_2002" --filters.reprojection.out_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_UTM10_CGVD2013_2010"
+pdal translate ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\input_utm10n_cgvd28_2002.laz ^
+D:\dev\CanElevation\vertical_transformations\sample_data\pointcloud\output_utm10n_cgvd2013_2010.laz ^
+--filters.reprojection.in_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2002_UTM10_HT2_2002" ^ --filters.reprojection.out_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_UTM10_CGVD2013_2010" ^
+filters.reprojection
 ```
 
 ## Verifying Transformation Results
