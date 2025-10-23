@@ -52,6 +52,7 @@ plugins:
             Environment Setup: Préparation de l'environnement
             Raster Transformations: Transformations matricielles
             Point Cloud Transformations: Transformations de nuages de points
+            Overview: Aperçu
 
 markdown_extensions:
   - pymdownx.highlight:
