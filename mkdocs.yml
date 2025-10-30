@@ -83,7 +83,7 @@ nav:
 extra:
   alternate:
     - name: English
-      link: ./en/
+      link: ./
       lang: en
     - name: Français  
       link: ./fr/
