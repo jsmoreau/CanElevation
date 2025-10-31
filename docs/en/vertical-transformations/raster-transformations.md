@@ -28,7 +28,7 @@ D:\dev\CanElevation\docs\assets\sample_data\raster\dtm_utm14_CGVD2013.tif
 
 - This gdalwarp command applies the transformation to a single DEM at a time. To perform the same transformation on all DEMs in a folder, you can use and adapt the [.bat file](../assets/scripts/cgvd2013_to_cgvd28_entirefolder.bat).
 
-- When performing a vertical transformation, it is generally recommended to use the geoid grid corresponding to the epoch of the horizontal reference system associated with the dataset. However, the differences due to an epoch change -- for example, between 1997 and 2010 in the context of NAD83(CSRS) -- are generally on the order of a few centimeters across the country. Their impact may therefore be negligible for a DEM, especially if the resolution and vertical accuracy of the DEM are not sufficient to detect such a variation.
+- When performing a vertical transformation, it is generally recommended to use the geoid grid corresponding to the epoch of the geometric reference system associated with the dataset. However, the differences due to an epoch change -- for example, between 1997 and 2010 in the context of NAD83(CSRS) -- are generally on the order of a few centimeters across the country. Their impact may therefore be negligible for a DEM, especially if the resolution and vertical accuracy of the DEM are not sufficient to detect such a variation.
 
 ## Verifying the Transformation Result
 
