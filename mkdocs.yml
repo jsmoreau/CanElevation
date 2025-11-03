@@ -8,9 +8,9 @@ theme:
   name: material
   custom_dir: docs/overrides
   features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
+    #- navigation.tabs
+    #- navigation.sections
+    #- navigation.expand
     - navigation.path
     - navigation.top
     - search.highlight
@@ -48,6 +48,9 @@ plugins:
           nav_translations:
             Home: Accueil
             Point Clouds: Nuages de points
+            Generate a DEM: Générer un MNE
+            Get Projects and Tiles by AOI: Obtenir les projets et les tuiles d'une région
+            QGIS Interactive Guide: Utilisation intéractive dans QGIS
             Vertical Transformations: Transformations verticales
             Environment Setup: Préparation de l'environnement
             Raster Transformations: Transformations matricielles
@@ -71,8 +74,8 @@ nav:
   - Home: index.md
   - Point Clouds:
     - Overview: pointclouds/index.md
-    - DEM from COPC LiDAR: pointclouds/dem-from-copc-lidar.md
-    - Projects and Tiles by AOI: pointclouds/projects-tiles-by-aoi.md
+    - Generate a DEM: pointclouds/dem-from-copc-lidar.md
+    - Get Projects and Tiles by AOI: pointclouds/projects-tiles-by-aoi.md
     - QGIS Interactive Guide: pointclouds/qgis-interactive.md
   - Vertical Transformations:
     - Overview: vertical-transformations/index.md
