@@ -35,7 +35,7 @@ RNCan a collaboré avec l'équipe de développement PROJ pour faciliter les conv
 
 La liste complète des définitions NRCAN disponibles peut être obtenue avec :
 ```bash
-sqlite3 %PROJ_DATA%\proj.db "select code from coordinate_metadata where auth_name = 'NRCAN';"
+sqlite3 %PROJ_DATA%/proj.db "select code from coordinate_metadata where auth_name = 'NRCAN';"
 ```
 
 Le format du URN doit être :
@@ -53,7 +53,7 @@ Ces définitions peuvent être ajoutées à votre installation PROJ locale en ex
     [📄 Télécharger nrcan_additional_coordinate_metadata.sql](../assets/scripts/nrcan_additional_coordinate_metadata.sql){ .md-button .md-button--primary }
 
 ```bash
-sqlite3 %PROJ_DATA%\proj.db ".read D:\dev\CanElevation\docs\assets\scripts\nrcan_additional_coordinate_metadata.sql"
+sqlite3 %PROJ_DATA%\proj.db ".read  D:/dev/CanElevation/docs/assets/scripts/nrcan_additional_coordinate_metadata.sql"
 ```
 
 Cette notation simplifie la spécification des systèmes de coordonnées canadiens courants, **incluant l'époque et le système altimétrique**, et assure la cohérence avec les définitions officielles de RNCan.
