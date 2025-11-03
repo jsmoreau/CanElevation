@@ -2,7 +2,7 @@
 
 Ce tutoriel montre comment trouver et charger les nuages de points à l'aide du logiciel [QGIS](https://qgis.org/).
 
-Les instructions sont compatibles avec la version **3.40**
+Les instructions sont compatibles avec la version **QGIS 3.40**
 
 Étapes:
 
@@ -63,7 +63,7 @@ Les points s'affichent maintenant dans la carte en 2D.
 
 ## Ouvrir une vue 3D sur la tuile
 
-Afin de profiter pleinement du jeu de données, nous allons maintenant ouvrir une vue 3D. Le nuage contient des points de différentes classes tels que sol (classe 2), bâtiment (classe 5), etc. Pour la vue 3D, nous vous recommandons de conserver les classes sol, bâtiments et pont. Désactiver toutes les autres dans le panneau *layer* situé à la gauche.
+Afin de profiter pleinement du jeu de données, nous allons maintenant ouvrir une vue 3D. Le nuage contient des points de différentes classes tels que sol (classe 2), bâtiments (classe 5), etc. Pour la vue 3D, nous vous recommandons de conserver les classes sol, bâtiments et pont. Désactiver toutes les autres dans le panneau *layer* situé à la gauche.
 
 ![image](https://github.com/user-attachments/assets/62cf1f91-fd73-4137-a84b-5e8000865bb1)
 

@@ -35,7 +35,7 @@ NRCan has worked with the PROJ development team to facilitate epoch and vertical
 
 The full list of available NRCAN definitions can be queried using:
 ```bash
-sqlite3 %PROJ_DATA%\proj.db "select code from coordinate_metadata where auth_name = 'NRCAN';"
+sqlite3 %PROJ_DATA%/proj.db "select code from coordinate_metadata where auth_name = 'NRCAN';"
 ```
 
 The URN must be formatted as:
@@ -53,7 +53,7 @@ These definitions can be added to your local PROJ installation by running the fo
     [📄 Download nrcan_additional_coordinate_metadata.sql](../assets/scripts/nrcan_additional_coordinate_metadata.sql){ .md-button .md-button--primary }
 
 ```bash
-sqlite3 %PROJ_DATA%\proj.db ".read D:\dev\CanElevation\docs\assets\scripts\nrcan_additional_coordinate_metadata.sql"
+sqlite3 %PROJ_DATA%/proj.db ".read D:/dev/CanElevation/docs/assets/scripts/nrcan_additional_coordinate_metadata.sql"
 ```
 
 This notation simplifies the specification of common Canadian coordinate systems, **including epoch and vertical datum**, and ensures consistency with official NRCAN definitions.

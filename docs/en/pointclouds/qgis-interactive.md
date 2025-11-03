@@ -3,7 +3,7 @@
 
 This tutorial shows how to find and load point clouds using [QGIS software](https://qgis.org/).
 
-The instructions are compatible with version 3.40.
+The instructions are compatible with version **QGIS 3.40**.
 
 Steps:
 
@@ -75,7 +75,7 @@ The 3D view can now be created by clicking on *View* > *3D Map views* > *New 3D 
 
 ![image](https://github.com/user-attachments/assets/ba2a1fae-68e9-4114-aa59-c575adc60a42)
 
-There are many 3D view settings available. Since this is not the topic of this demo, we suggest you consult the 
+There are many 3D view settings available; however, since this is not the topic of this demonstration, we suggest you consult the 
 [QGIS documentation on the 3D view](https://docs.qgis.org/3.40/en/docs/user_manual/map_views/3d_map_view.html).
 
 ![image](https://github.com/user-attachments/assets/b0c193ba-45a8-426e-9e9c-b96c9b56ca12)
