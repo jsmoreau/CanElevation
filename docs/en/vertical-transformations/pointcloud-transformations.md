@@ -1,14 +1,34 @@
+<!-- filepath: d:\dev\CanElevation\docs\en\vertical-transformations\pointcloud-transformations.md -->
 # Vertical Transformations for Point Clouds
 
-This guide demonstrates how to perform vertical and epoch transformations on point cloud data. The geoid grid corresponding to the epoch of the horizontal reference system associated with the dataset is considered. Aerial lidar data often reach accuracy in the centimeter range. Therefore, the differences due to an epoch change have an impact and must be considered.
+This guide demonstrates how to perform vertical and epoch transformations on point cloud data. Understanding the relationship between vertical datums and epochs is crucial for accurate transformations. Aerial lidar data often reach accuracy in the centimeter range, making these considerations essential.
+
+## Understanding Vertical Datums and Epochs
+
+### CGVD28 - Epoch-less Convention
+CGVD28 heights are considered **epoch-less** by convention. This means:
+- Orthometric heights in CGVD28 do not change over time
+- CGVD28 was based on decades of levelling data
+- Heights remain constant regardless of crustal movement
+
+However, since ellipsoidal heights from GNSS **do** change over time, different versions of the HT2 geoid model were created to convert between ellipsoidal heights at specific epochs and CGVD28 orthometric heights:
+- **HT2_1997** – converts NAD83(CSRS) ellipsoidal heights in epoch 1997 to CGVD28 orthometric heights
+- **HT2_2002** – converts NAD83(CSRS) ellipsoidal heights in epoch 2002 to CGVD28 orthometric heights  
+- **HT2_2010** – converts NAD83(CSRS) ellipsoidal heights in epoch 2010 to CGVD28 orthometric heights
+
+### CGVD2013 - Epoch-dependent Heights
+CGVD2013 heights **do change over time** as they follow the movement of the Earth's crust:
+- Geoid heights (CGG2013a) are considered static in NAD83(CSRS) by convention
+- CGVD2013 orthometric heights change at the same rate as ellipsoidal heights (H = h - N)
+- The vertical transformation between CGVD28 and CGVD2013 changes over time
 
 ## Transformation Scenarios
 
 We cover the following transformation scenarios:
 
-1. **UTM 17N CGVD28, epoch 2010 → UTM 17N CGVD2013, epoch 2010** (vertical datum transformation only, no epoch)
-2. **MTM 7 CGVD28, epoch 1997 → MTM 7 CGVD2013, epoch 2010** (vertical and epoch)
-3. **UTM 10N CGVD28, epoch 2002 → UTM 10N CGVD2013, epoch 2010** (vertical and epoch)
+1. **UTM 17N NAD83(CSRS) epoch 2010 CGVD28 → UTM 17N NAD83(CSRS) epoch 2010 CGVD2013** (vertical datum transformation only)
+2. **MTM 7 NAD83(CSRS) epoch 1997 CGVD28 → MTM 7 NAD83(CSRS) epoch 2010 CGVD2013** (vertical datum transformation with epoch conversion)
+3. **UTM 10N NAD83(CSRS) epoch 2002 CGVD28 → UTM 10N NAD83(CSRS) epoch 2010 CGVD2013** (vertical datum transformation with epoch conversion)
 
 Each scenario is illustrated with examples using both PROJ string notation and NRCAN URN notation. The notation formats are explained in the next section.
 
@@ -64,23 +84,23 @@ This notation simplifies the specification of common Canadian coordinate systems
 
 [PDAL (Point Data Abstraction Library)](https://pdal.io/) is a powerful tool for processing point cloud data. We use its `translate` command with the `filters.reprojection` filter to perform transformations.
 
-### Vertical Datum Transformations for the Same Epoch
+### Vertical Datum Transformation: Same Horizontal Epoch
 
-For transformations within the same epoch, both PROJ String notation and URN notation can be used.
-We will show how to apply a vertical datum transformation from **UTM 17N CGVD28, epoch 2010** to **UTM 17N CGVD2013, epoch 2010**.
+For transformations within the same horizontal epoch, both PROJ String notation and URN notation can be used.
+We will show how to apply a vertical datum transformation from **UTM 17N NAD83(CSRS) epoch 2010 CGVD28** to **UTM 17N NAD83(CSRS) epoch 2010 CGVD2013**. Since CGVD28 is epoch-less, we specify the epoch (2010) for the appropriate HT2 grid to convert to CGVD2013.
 
 <!-- Validated using gps-h 
 input coordinates: 673375.980 4891478.970 263.760
 output coordinates: 673375.980 4891478.970 263.409-->
 !!! info "Files"
-    [📄 Download input_utm17n_cgvd28_2010.laz](../assets/sample_data/pointcloud/input_utm17n_cgvd28_2010.laz){ .md-button .md-button--primary }
+    [📄 Download input_utm17n_nad83csrs2010_cgvd28.laz](../assets/sample_data/pointcloud/input_utm17n_nad83csrs2010_cgvd28.laz){ .md-button .md-button--primary }
 
 **PROJ string notation:**
 
 ```bash
 pdal translate ^
-D:\dev\CanElevation\docs\assets\sample_data\pointcloud\input_utm17n_cgvd28_2010.laz ^
-D:\dev\CanElevation\docs\assets\sample_data\pointcloud\output_utm17n_cgvd2013_2010.laz ^
+D:\dev\CanElevation\docs\assets\sample_data\pointcloud\input_utm17n_nad83csrs2010_cgvd28.laz ^
+D:\dev\CanElevation\docs\assets\sample_data\pointcloud\output_utm17n_nad83csrs2010_cgvd2013.laz ^
 --filters.reprojection.in_srs="+init=EPSG:2958 +geoidgrids=ca_nrc_HT2_2010v70.tif" ^
 --filters.reprojection.out_srs="+init=EPSG:2958 +geoidgrids=ca_nrc_CGG2013an83.tif" ^
 filters.reprojection
@@ -89,18 +109,20 @@ filters.reprojection
 **NRCAN URN notation:**
 ```bash
 pdal translate ^
-D:\dev\CanElevation\docs\assets\sample_data\pointcloud\input_utm17n_cgvd28_2010.laz ^
-D:\dev\CanElevation\docs\assets\sample_data\pointcloud\output_utm17n_cgvd2013_2010.laz ^
+D:\dev\CanElevation\docs\assets\sample_data\pointcloud\input_utm17n_nad83csrs2010_cgvd28.laz ^
+D:\dev\CanElevation\docs\assets\sample_data\pointcloud\output_utm17n_nad83csrs2010_cgvd2013.laz ^
 --filters.reprojection.in_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_UTM17_HT2_2010" ^
 --filters.reprojection.out_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_UTM17_CGVD2013_2010" ^
 filters.reprojection
 ```
 
-### Working with Different Epochs
+### Working with Different Horizontal Epochs
 
-For point clouds with centimeter-level accuracy, accounting for differences in epochs and projections is important. The PROJ String notation used in the previous example cannot be used for epoch conversion. Therefore, the following transformation scenarios use the **NRCAN URN** notation only.
+For point clouds with centimeter-level accuracy, accounting for differences in horizontal epochs is important when converting to CGVD28, and then to CGVD2013. The PROJ String notation used in the previous example cannot handle epoch conversion. Therefore, the following transformation scenarios use the **NRCAN URN** notation only.
 
-### MTM 7 CGVD28, epoch 1997 → MTM 7 CGVD2013, epoch 2010
+### MTM 7 NAD83(CSRS) epoch 1997 CGVD28 → MTM 7 NAD83(CSRS) epoch 2010 CGVD2013
+
+This transformation handles input data where the horizontal coordinates were acquired in epoch 1997. The appropriate HT2_1997 grid is used for the CGVD28 conversion, and the output converts both horizontal coordinates to epoch 2010 and vertical to CGVD2013.
 
 <!-- Validated using both TRX and gps-h 
 Conversion du vertical dans gps-h en utilisant HT2_1997_TO_CGG2013a. 71.525 -> 71.192.
@@ -109,32 +131,34 @@ input coordinates: 259800.461 5359998.81 71.525
 output coordinates:   259800.494 5359998.810 71.25-->
 
 !!! info "Files"
-    [📄 Download input_mtm7_cgvd28_1997.laz](../assets/sample_data/pointcloud/input_mtm7_cgvd28_1997.laz){ .md-button .md-button--primary }
+    [📄 Download input_mtm7_nad83csrs1997_cgvd28.laz](../assets/sample_data/pointcloud/input_mtm7_nad83csrs1997_cgvd28.laz){ .md-button .md-button--primary }
 
 ```bash
 pdal translate ^
-D:\dev\CanElevation\docs\assets\sample_data\pointcloud\input_mtm7_cgvd28_1997.laz ^
-D:\dev\CanElevation\docs\assets\sample_data\pointcloud\output_mtm7_cgvd2013_2010.laz ^
+D:\dev\CanElevation\docs\assets\sample_data\pointcloud\input_mtm7_nad83csrs1997_cgvd28.laz ^
+D:\dev\CanElevation\docs\assets\sample_data\pointcloud\output_mtm7_nad83csrs2010_cgvd2013.laz ^
  --filters.reprojection.in_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_1997_MTM7_HT2_1997" ^
  --filters.reprojection.out_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_MTM7_CGVD2013_2010" ^
  filters.reprojection
 ```
 
-### UTM 10N CGVD28, epoch 2002 → UTM 10N CGVD2013, epoch 2010
+### UTM 10N NAD83(CSRS) epoch 2002 CGVD28 → UTM 10N NAD83(CSRS) epoch 2010 CGVD2013
+
+This transformation handles input data where the horizontal coordinates were acquired in epoch 2002. The appropriate HT2_2002 grid is used for the CGVD28 conversion, and the output converts both horizontal coordinates to epoch 2010 and vertical to CGVD2013.
 
 <!-- Validated using both TRX and gps-h 
-Conversion du vertical dans gps-h en utilisant HT2_1997_TO_CGG2013a. 71.525 -> 71.192.
-Utilisation de la valeur 71.192 dans TRX afin d'appliquer la transformation d'époque.
-input coordinates: 259800.461 5359998.81 71.525
-output coordinates:   259800.494 5359998.810 71.25-->
+Conversion du vertical dans gps-h en utilisant HT2_2002_TO_CGG2013a. 1808.58 -> 1808.876.
+Utilisation de la valeur 1808.876 dans TRX afin d'appliquer la transformation d'époque.
+input coordinates: 550723.16 5659804.74 1808.58
+output coordinates: 550723.19 5659804.76 1808.89-->
 
 !!! info "Files"
-    [📄 Download input_utm10n_cgvd28_2002.laz](../assets/sample_data/pointcloud/input_utm10n_cgvd28_2002.laz){ .md-button .md-button--primary }
+    [📄 Download input_utm10n_nad83csrs2002_cgvd28.laz](../assets/sample_data/pointcloud/input_utm10n_nad83csrs2002_cgvd28.laz){ .md-button .md-button--primary }
 
 ```bash
 pdal translate ^
-D:\dev\CanElevation\docs\assets\sample_data\pointcloud\input_utm10n_cgvd28_2002.laz ^
-D:\dev\CanElevation\docs\assets\sample_data\pointcloud\output_utm10n_cgvd2013_2010.laz ^
+D:\dev\CanElevation\docs\assets\sample_data\pointcloud\input_utm10n_nad83csrs2002_cgvd28.laz ^
+D:\dev\CanElevation\docs\assets\sample_data\pointcloud\output_utm10n_nad83csrs2010_cgvd2013.laz ^
 --filters.reprojection.in_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2002_UTM10_HT2_2002" ^
 --filters.reprojection.out_srs="urn:ogc:def:coordinateMetadata:NRCAN::NAD83_CSRS_2010_UTM10_CGVD2013_2010" ^
 filters.reprojection
@@ -155,7 +179,9 @@ These steps can be used to validate vertical datum transformations only. To vali
 
 **Conversion grids for CGVD28 to CGVD2013 datum conversion**
 
-| Epoch | Grid link |
+The conversion grid to use depends on the **target epoch** of your CGVD2013 output, since CGVD2013 heights change over time while CGVD28 heights remain constant.
+
+| Target CGVD2013 Epoch | Grid link |
 | ----- | --------- |
 | 1997 | [HT2_1997_CGG2013a_tif](https://cdn.proj.org/ca_nrc_HT2_1997_CGG2013a.tif) |
 | 2002 | [HT2_2002_CGG2013a_tif](https://cdn.proj.org/ca_nrc_HT2_2002v70_CGG2013a.tif) |
@@ -167,7 +193,7 @@ These steps can be used to validate vertical datum transformations only. To vali
 
 After completing the analysis in QGIS, you can confirm the validity of the converted elevations by querying the same XY coordinate in the [GPS.H tool](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php?locale=en) from the [Canadian Geodetic Survey](https://natural-resources.canada.ca/science-data/science-research/geomatics/geodetic-reference-systems). This will confirm that the vertical transformation of the point cloud has worked correctly.
 
-Here, we are using the resulting file from the last conversion (UTM 10N CGVD28, epoch 2002 → UTM 10N CGVD2013, epoch 2010). We test the following input coordinate:
+Here, we are using the resulting file from the last conversion (UTM 10N NAD83(CSRS) epoch 2002 CGVD28 → UTM 10N NAD83(CSRS) epoch 2010 CGVD2013). We test the following input coordinate:
 
 || X | Y | Z |
 || --- | ----| ----|
@@ -178,7 +204,7 @@ The following command is useful to get a single point details using pdal. By usi
 
 ```bash
 cd docs\assets\sample_data\pointcloud
-pdal info output_utm10n_cgvd2013_2010.laz -p 0
+pdal info output_utm10n_nad83csrs2010_cgvd2013.laz -p 0
 ```
 
 In GPS.H, we choose the appropriate mode (Convert) and the grid corresponding to the transformation we performed (HT2_2002_to_CGG2013a). We then add the coordinates and calculate the CGVD2013 height.
@@ -187,7 +213,7 @@ In GPS.H, we choose the appropriate mode (Convert) and the grid corresponding to
 
 
 !!! warning "IMPORTANT"
-    **The value you will get (1808.876 m) won't match the Z value you got from the PDAL conversion (1808.89 m). This is because GPS.H does not perform epoch conversion. To validate the epoch conversion, we need to use the TRX tool (see the new section).**
+    **The value you will get (1808.876 m) won't match the Z value you got from the PDAL conversion (1808.89 m). This is because GPS.H does not perform epoch conversion. To validate the epoch conversion, we need to use the TRX tool (see the next section).**
 
 #### TRX
 
