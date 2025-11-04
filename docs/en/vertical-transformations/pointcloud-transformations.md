@@ -7,17 +7,20 @@ This guide demonstrates how to perform vertical and epoch transformations on poi
 
 ### CGVD28 - Epoch-less Convention
 CGVD28 heights are considered **epoch-less** by convention. This means:
+
 - Orthometric heights in CGVD28 do not change over time
 - CGVD28 was based on decades of levelling data
 - Heights remain constant regardless of crustal movement
 
 However, since ellipsoidal heights from GNSS **do** change over time, different versions of the HT2 geoid model were created to convert between ellipsoidal heights at specific epochs and CGVD28 orthometric heights:
+
 - **HT2_1997** – converts NAD83(CSRS) ellipsoidal heights in epoch 1997 to CGVD28 orthometric heights
 - **HT2_2002** – converts NAD83(CSRS) ellipsoidal heights in epoch 2002 to CGVD28 orthometric heights  
 - **HT2_2010** – converts NAD83(CSRS) ellipsoidal heights in epoch 2010 to CGVD28 orthometric heights
 
 ### CGVD2013 - Epoch-dependent Heights
 CGVD2013 heights **do change over time** as they follow the movement of the Earth's crust:
+
 - Geoid heights (CGG2013a) are considered static in NAD83(CSRS) by convention
 - CGVD2013 orthometric heights change at the same rate as ellipsoidal heights (H = h - N)
 - The vertical transformation between CGVD28 and CGVD2013 changes over time
@@ -223,6 +226,7 @@ For the X and Y coordinates, we will use the same input values we used in the la
 ![image](../assets/images/TRX_scenario3.png)
 
 You should then ensure that the resulting coordinates match those in the resulting files. If this is not the case, please review the coordinates and parameters you have used to make sure they are correct.
+
 
 
 
