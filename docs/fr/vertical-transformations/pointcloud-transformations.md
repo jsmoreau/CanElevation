@@ -8,7 +8,7 @@ Ce guide explique comment effectuer des transformations verticales et d'époques
 Les hauteurs CGVD28 sont considérées **sans époque** par convention. Cela signifie :
 
 - Les hauteurs orthométriques en CGVD28 ne changent pas avec le temps
-- Le CGVD28 était basé sur des décennies de données de nivellement
+- Le CGVD28 est basé sur des décennies de données de nivellement
 - Les hauteurs restent constantes indépendamment du mouvement de la croûte terrestre
 
 Cependant, puisque les hauteurs ellipsoïdales des GNSS **changent** avec le temps, différentes versions du modèle de géoïde HT2 ont été créées pour convertir entre les hauteurs ellipsoïdales à des époques spécifiques et les hauteurs orthométriques CGVD28 :
@@ -17,7 +17,7 @@ Cependant, puisque les hauteurs ellipsoïdales des GNSS **changent** avec le tem
 - **HT2_2002** – convertit les hauteurs ellipsoïdales NAD83(SCRS) à l'époque 2002 en hauteurs orthométriques CGVD28  
 - **HT2_2010** – convertit les hauteurs ellipsoïdales NAD83(SCRS) à l'époque 2010 en hauteurs orthométriques CGVD28
 
-### CGVD2013 - Hauteurs dépendantes de l'époque
+### CGVD2013 - Hauteurs variables selon l'époque
 Les hauteurs CGVD2013 **changent avec le temps** car elles suivent le mouvement de la croûte terrestre :
 
 - Les hauteurs de géoïde (CGG2013a) sont considérées statiques dans NAD83(SCRS) par convention
@@ -26,11 +26,11 @@ Les hauteurs CGVD2013 **changent avec le temps** car elles suivent le mouvement 
 
 ## Scénarios de transformation
 
-Nous couvrons les scénarios de transformation suivants :
+Nous démontrons les scénarios de transformation suivants :
 
-1. **UTM 17N NAD83(SCRS) époque 2010 CGVD28 → UTM 17N NAD83(SCRS) époque 2010 CGVD2013** (transformation de système altimétrique seulement)
-2. **MTM 7 NAD83(SCRS) époque 1997 CGVD28 → MTM 7 NAD83(SCRS) époque 2010 CGVD2013** (transformation de système altimétrique avec conversion d'époque)
-3. **UTM 10N NAD83(SCRS) époque 2002 CGVD28 → UTM 10N NAD83(SCRS) époque 2010 CGVD2013** (transformation de système altimétrique avec conversion d'époque)
+1. **UTM 17N NAD83(SCRS) époque 2010 CGVD28 → UTM 17N NAD83(SCRS) époque 2010 CGVD2013** (transformation de datum vertical seulement)
+2. **MTM 7 NAD83(SCRS) époque 1997 CGVD28 → MTM 7 NAD83(SCRS) époque 2010 CGVD2013** (transformation de datum vertical avec conversion d'époque)
+3. **UTM 10N NAD83(SCRS) époque 2002 CGVD28 → UTM 10N NAD83(SCRS) époque 2010 CGVD2013** (transformation de datum vertical avec conversion d'époque)
 
 Chaque scénario est illustré avec des exemples utilisant la notation PROJ string et la notation URN NRCAN. Les formats de notation sont expliqués dans la section suivante.
 
@@ -47,13 +47,13 @@ La notation PROJ string utilise une combinaison de codes EPSG et de fichiers de 
 ```
 
 - `+init=EPSG:xxxx` spécifie le système de coordonnées horizontal (ex. : zone UTM, MTM).
-- `+geoidgrids=...` pointe vers le fichier de grille de géoïde qui définit le système altimétrique.
+- `+geoidgrids=...` pointe vers le fichier de grille de géoïde qui définit le datum vertical.
 
-Cette notation est largement supportée et permet un contrôle précis des paramètres de transformation. Pour ce tutoriel, **nous l'utilisons uniquement pour les transformations de système altimétrique**. Pour les transformations qui incluent les époques, nous utilisons la notation URN.
+Cette notation est largement supportée et permet un contrôle précis des paramètres de transformation. Pour ce tutoriel, **nous l'utilisons uniquement pour les transformations de datum verticaux**. Pour les transformations qui incluent les époques, nous utilisons la notation URN.
 
 ### Notation URN NRCAN PROJ
 
-RNCan a collaboré avec l'équipe de développement PROJ pour faciliter les conversions d'époques et de systèmes altimétriques. Depuis PROJ 9.6, des définitions spécifiques `CoordinateMetadata` ont été ajoutées à PROJ, permettant aux utilisateurs de référencer des systèmes de coordonnées canadiens complexes et des systèmes altimétriques à l'aide d'un nom de ressource uniforme (URN).
+RNCan a collaboré avec l'équipe de développement PROJ pour faciliter les conversions d'époques et de datum verticaux. Depuis PROJ 9.6, des définitions spécifiques `CoordinateMetadata` ont été ajoutées à PROJ, permettant aux utilisateurs de référencer des systèmes de coordonnées canadiens complexes et des systèmes altimétriques à l'aide d'un nom de ressource uniforme (URN).
 
 La liste complète des définitions NRCAN disponibles peut être obtenue avec :
 ```bash
@@ -78,7 +78,7 @@ Ces définitions peuvent être ajoutées à votre installation PROJ locale en ex
 sqlite3 %PROJ_DATA%\proj.db ".read D:/dev/CanElevation/docs/assets/scripts/nrcan_additional_coordinate_metadata.sql"
 ```
 
-Cette notation simplifie la spécification des systèmes de coordonnées canadiens courants, **incluant l'époque et le système altimétrique**, et assure la cohérence avec les définitions officielles de RNCan.
+Cette notation simplifie la définition des systèmes de coordonnées canadiens courants, **incluant l'époque et le datum vertical**, et assure la cohérence avec les définitions officielles de RNCan.
 
 ---
 
@@ -89,7 +89,7 @@ Cette notation simplifie la spécification des systèmes de coordonnées canadie
 ### Transformation de système altimétrique : Même époque horizontale
 
 Pour les transformations au sein de la même époque horizontale, les notations PROJ String et URN peuvent être utilisées.
-Nous montrerons comment appliquer une transformation de système altimétrique de **UTM 17N NAD83(SCRS) époque 2010 CGVD28** vers **UTM 17N NAD83(SCRS) époque 2010 CGVD2013**. Puisque CGVD28 est sans époque, nous spécifions l'époque (2010) pour la grille HT2 appropriée pour convertir vers CGVD2013.
+Nous montrerons comment appliquer une transformation de système altimétrique vertical de **UTM 17N NAD83(SCRS) époque 2010 CGVD28** vers **UTM 17N NAD83(SCRS) époque 2010 CGVD2013**. Puisque CGVD28 est sans époque, nous spécifions la grille HT2 appropriée (HT2_2010) pour convertir vers CGVD2013.
 
 <!-- Validated using gps-h 
 input coordinates: 673375.980 4891478.970 263.760
@@ -124,7 +124,7 @@ Pour les nuages de points avec une précision centimétrique, la prise en compte
 
 ### MTM 7 NAD83(SCRS) époque 1997 CGVD28 → MTM 7 NAD83(SCRS) époque 2010 CGVD2013
 
-Cette transformation traite les données d'entrée où les coordonnées horizontales ont été acquises à l'époque 1997. La grille HT2_1997 appropriée est utilisée pour la conversion CGVD28, et la sortie convertit à la fois les coordonnées horizontales vers l'époque 2010 et la verticale vers CGVD2013.
+Cette transformation traite les données pour lesquelles les coordonnées horizontales ont été acquises à l'époque 1997. La grille HT2_1997 appropriée est utilisée pour la conversion CGVD28, et la sortie convertit à la fois les coordonnées horizontales vers l'époque 2010 et verticales vers CGVD2013.
 
 <!-- Validated using both TRX and gps-h 
 Conversion du vertical dans gps-h en utilisant HT2_1997_TO_CGG2013a. 71.525 -> 71.192.
@@ -146,7 +146,7 @@ filters.reprojection
 
 ### UTM 10N NAD83(SCRS) époque 2002 CGVD28 → UTM 10N NAD83(SCRS) époque 2010 CGVD2013
 
-Cette transformation traite les données d'entrée où les coordonnées horizontales ont été acquises à l'époque 2002. La grille HT2_2002 appropriée est utilisée pour la conversion CGVD28, et la sortie convertit à la fois les coordonnées horizontales vers l'époque 2010 et la verticale vers CGVD2013.
+Cette transformation traite les données d'entrée où les coordonnées horizontales ont été acquises à l'époque 2002. La grille HT2_2002 appropriée est utilisée pour la conversion CGVD28, et la sortie convertit à la fois les coordonnées horizontales vers l'époque 2010 et verticales vers CGVD2013.
 
 <!-- Validated using both TRX and gps-h 
 Conversion du vertical dans gps-h en utilisant HT2_2002_TO_CGG2013a. 1808.58 -> 1808.876.
@@ -172,12 +172,16 @@ Une fois le nuage de points transformé, il est recommandé d'effectuer une vér
 
 ### Étapes de validation dans QGIS
 
-Ces étapes peuvent être utilisées pour valider uniquement les transformations de systèmes altimétriques. Pour valider la conversion d'époque, veuillez utiliser les instructions de la section suivante.
+Ces étapes peuvent être utilisées pour valider uniquement les transformations de datums verticaux. **Pour valider la conversion d'époque, veuillez utiliser les instructions de la section suivante.**
 
 1. Ouvrir le nuage de points d'entrée (en CGVD28) et le nuage de points converti (en CGVD2013) dans QGIS.
 2. Ajouter la grille de conversion correspondant à la transformation que vous avez effectuée (voir le tableau ci-dessous).
 3. Utiliser l'outil 'Identifier les entités' ou l'outil de profil de nuage de points pour interroger les valeurs d'élévation au même emplacement.
 4. Comparer les valeurs obtenues : elles devraient présenter une différence correspondant à la variation entre les deux géoïdes à cet emplacement, selon les grilles utilisées dans la transformation.
+
+La capture suivante illustre le résultat obtenu. La valeur de la grille de séparation (HT2_2010_CGG2013a_tif) est de 35 cm ce qui correspond à la différence entre l'élévation du point en CGVD28 et en CGVD2013 au même endroit soit respectivement, 266.57 m et 266.22 m.
+
+![image](../assets/images/QGIS_validation.png)
 
 **Grilles de conversion pour la conversion de système altimétrique CGVD28 vers CGVD2013**
 
