@@ -1,4 +1,3 @@
-<!-- filepath: d:\dev\CanElevation\docs\en\vertical-transformations\pointcloud-transformations.md -->
 # Vertical Transformations for Point Clouds
 
 This guide demonstrates how to perform vertical and epoch transformations on point cloud data. Understanding the relationship between vertical datums and epochs is crucial for accurate transformations. Aerial lidar data often reach accuracy in the centimeter range, making these considerations essential.
@@ -121,7 +120,7 @@ filters.reprojection
 
 ### Working with Different Horizontal Epochs
 
-For point clouds with centimeter-level accuracy, accounting for differences in horizontal epochs is important when converting to CGVD28, and then to CGVD2013. The PROJ String notation used in the previous example cannot handle epoch conversion. Therefore, the following transformation scenarios use the **NRCAN URN** notation only.
+For point clouds with centimeter-level accuracy, accounting for differences in horizontal epochs is important when converting from CGVD28 to CGVD2013. The PROJ String notation used in the previous example cannot handle epoch conversion. Therefore, the following transformation scenarios use the **NRCAN URN** notation only.
 
 ### MTM 7 NAD83(CSRS) epoch 1997 CGVD28 → MTM 7 NAD83(CSRS) epoch 2010 CGVD2013
 
@@ -173,12 +172,16 @@ Once the point cloud has been transformed, it is recommended to perform an indep
 
 ### Validation Steps in QGIS
 
-These steps can be used to validate vertical datum transformations only. To validate epoch conversion, please use the instructions in the next section.
+These steps can be used to validate vertical datum transformations only. **To validate epoch conversion, please use the instructions in the next section.**
 
 1. Open the input point cloud (in CGVD28) and the converted point cloud (in CGVD2013) in QGIS.
 2. Add the conversion grid corresponding to the transformation you performed (see the table below).
 3. Use the 'Identify Features' tool or the point cloud profile tool to query elevation values at the same location.
 4. Compare the obtained values: they should show a difference corresponding to the variation between the two geoids at that location, according to the grids used in the transformation.
+
+The following screenshot illustrates the result obtained. The value of the separation grid (HT2_2010_CGG2013a_tif) is 35 cm, which corresponds to the difference between the point elevation in CGVD28 and CGVD2013 at the same location, which are 266.57 m and 266.22 m respectively.
+
+![image](../assets/images/QGIS_validation.png)
 
 **Conversion grids for CGVD28 to CGVD2013 datum conversion**
 
@@ -194,7 +197,7 @@ The conversion grid to use depends on the **target epoch** of your CGVD2013 outp
 
 #### GPS.H
 
-After completing the analysis in QGIS, you can confirm the validity of the converted elevations by querying the same XY coordinate in the [GPS.H tool](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php?locale=en) from the [Canadian Geodetic Survey](https://natural-resources.canada.ca/science-data/science-research/geomatics/geodetic-reference-systems). This will confirm that the vertical transformation of the point cloud has worked correctly.
+After completing the analysis in QGIS, you can confirm the validity of the converted elevations by querying the same XY coordinate in the [GPS.H tool](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/gpsh.php?locale=en) from the [Canadian Geodetic Survey](https://natural-resources.canada.ca/science-data/science-research/geomatics/geodetic-reference-systems). This will confirm that the vertical transformation of the point cloud has been applied correctly.
 
 Here, we are using the resulting file from the last conversion (UTM 10N NAD83(CSRS) epoch 2002 CGVD28 → UTM 10N NAD83(CSRS) epoch 2010 CGVD2013). We test the following input coordinate:
 
@@ -203,29 +206,28 @@ Here, we are using the resulting file from the last conversion (UTM 10N NAD83(CS
 | input | 550723.16 | 5659804.74 | 1808.58 |
 | output | 550723.19 | 5659804.76 | 1808.89 |
 
-The following command is useful to get a single point details using pdal. By using it on both the input and output files for the same point id, you get the coordinates of the a point before and after the transformation.
+The following command is useful to get a single point's details using PDAL. By using it on both the input and output files for the same point ID, you get the coordinates of a point before and after the transformation.
 
 ```bash
 cd docs\assets\sample_data\pointcloud
 pdal info output_utm10n_nad83csrs2010_cgvd2013.laz -p 0
 ```
 
-In GPS.H, we choose the appropriate mode (Convert) and the grid corresponding to the transformation we performed (HT2_2002_to_CGG2013a). We then add the coordinates and calculate the CGVD2013 height.
+In GPS.H, we choose the appropriate mode (Convert) and the grid corresponding to the transformation we performed. Again, since CGVD28 heights are static, we use the conversion grid corresponding to the **target epoch**, which is **HT2_2010_to_CGG2013a**. We then add the input coordinates and calculate the corresponding CGVD2013 height.
 
 ![image](../assets/images/gps-h_scenario3.png)
 
 
-!!! warning "IMPORTANT"
-    **The value you will get (1808.876 m) won't match the Z value you got from the PDAL conversion (1808.89 m). This is because GPS.H does not perform epoch conversion. To validate the epoch conversion, we need to use the TRX tool (see the next section).**
-
 #### TRX
 
-Using TRX, we can validate the coordinates we obtained to ensure the epoch conversion was performed properly.
-For the X and Y coordinates, we will use the same input values we used in the last section. For the Z value, we will use the resulting height we obtained from GPS.H in the last section (1808.876 m). Since GPS.H does not perform epoch conversion, this height is still in epoch 2002.
+Using TRX, we can validate the X and Y coordinates we obtained to ensure the epoch conversion was performed properly.
+We will use the same input values we used in the last section. We can skip the Z value since GPS.H already provided a value that included the epoch conversion. 
 
 ![image](../assets/images/TRX_scenario3.png)
 
-You should then ensure that the resulting coordinates match those in the resulting files. If this is not the case, please review the coordinates and parameters you have used to make sure they are correct.
+The resulting h value represents the height difference caused by the epoch change (2002 to 2010) at the given X and Y coordinates. Again, this epoch change was considered for the Z conversion using GPS.H, so we don't have to address it separately.
+
+**You should** ensure that the resulting X and Y coordinates match those in the resulting files. If this is not the case, please review the coordinates and parameters you have used to make sure they are correct.
 
 
 
