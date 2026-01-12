@@ -5,6 +5,7 @@ Bienvenue dans la documentation de la série CanÉlévation. Ce site fournit des
 ## Démarrage rapide
 
 * [Nuages de points](pointclouds/index.md) - Exemples d'utilisation des données de nuages de points LiDAR
+* [Mosaïques HRDEM via STAC](stac-dem-mosaics/index.md) - Accéder aux mosaïques DEM haute résolution via STAC
 * [Transformations verticales](vertical-transformations/index.md) - Guides pour les transformations de datums verticaux
 
 ## À propos de CanÉlévation
@@ -18,4 +19,5 @@ Cette documentation est construite à partir du dépôt GitHub CanÉlévation et
 * Des notebooks Jupyter interactifs pour le traitement des données
 * Des guides étape par étape pour les transformations verticales
 * Des exemples d'utilisation des nuages de points LiDAR
+* Des guides d'accès à l'API STAC pour les données DEM cloud-optimisées
 * De la documentation multilingue (anglais et français)

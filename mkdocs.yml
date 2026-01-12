@@ -51,6 +51,9 @@ plugins:
             Generate a DEM: Générer un MNE
             Get Projects and Tiles by AOI: Obtenir les projets et les tuiles d'une région
             QGIS Interactive Guide: Utilisation intéractive dans QGIS
+            STAC HRDEM Mosaics: Mosaïques MNEHR via STAC
+            Accessing STAC with Python: Accès à STAC avec Python
+            Accessing STAC with QGIS: Accès à STAC avec QGIS
             Vertical Transformations: Transformations verticales
             Environment Setup: Préparation de l'environnement
             Raster Transformations: Transformations matricielles
@@ -77,6 +80,10 @@ nav:
     - Generate a DEM: pointclouds/dem-from-copc-lidar.md
     - Get Projects and Tiles by AOI: pointclouds/projects-tiles-by-aoi.md
     - QGIS Interactive Guide: pointclouds/qgis-interactive.md
+  - STAC HRDEM Mosaics:
+    - Overview: stac-dem-mosaics/index.md
+    - Accessing STAC with Python: stac-dem-mosaics/accessing-stac-with-python.md
+    - Accessing STAC with QGIS: stac-dem-mosaics/accessing-stac-with-qgis.md
   - Vertical Transformations:
     - Overview: vertical-transformations/index.md
     - Environment Setup: vertical-transformations/environment-setup.md
