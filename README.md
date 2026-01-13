@@ -14,7 +14,7 @@ This repository contains:
 - **Documentation** - Comprehensive guides in both English and French
 - **Sample Data** - Example datasets for testing and learning
 
-## Key Features
+## 🪄Key Features
 
 ### STAC DEM Mosaics
 
@@ -70,3 +70,4 @@ This project is licensed under the [Open Government Licence - Canada](https://op
 For questions or support:
 - 📖 Check the [documentation](https://nrcan.github.io/CanElevation/)
 - 🐛 Report issues on [GitHub Issues](https://github.com/NRCan/CanElevation/issues)
+
