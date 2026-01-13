@@ -25,7 +25,7 @@ The HRDEM mosaics available through the CCMEO STAC API offer several advantages:
 
 The STAC API provides access to the following DEM mosaic collections:
 
-- **hrdem-mosaic-1m**: Mosaic of High Resolution Digital Elevation Model (HRDEM) at 1mc
+- **hrdem-mosaic-1m**: Mosaic of High Resolution Digital Elevation Model (HRDEM) at 1m
 - **hrdem-mosaic-2m**: Mosaic of High Resolution Digital Elevation Model (HRDEM) at 2m
 - **hrdem-lidar**: High Resolution DEM by lidar acquisition projects at 1m
 - **hrdem-arcticdem** Mosaic of High Resolution Digital Elevation Model (HRDEM) generated from optical stereo imagery (ArcticDEM)
@@ -62,3 +62,4 @@ These tutorials are designed for:
 - **HRDEM**: High Resolution Digital Elevation Model
 - **CCMEO**: Canada Center for Mapping and Earth Observation, Natural Resources Canada
 - **AOI**: Area of Interest
+
