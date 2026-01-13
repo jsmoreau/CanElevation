@@ -8,7 +8,7 @@ A Spatio-Temporal Asset Catalog (STAC) is a standardized specification for organ
 
 ## Why STAC for DEM Mosaics?
 
-The HRDEM mosaics available through the CCMEO STAC API offer several advantages:
+The DEM mosaics available through the CCMEO STAC API offer several advantages:
 
 - **Discovery**: Query available DEM collections and filter by geographic extent and temporal coverage
 - **Efficiency**: Access only the data you need through COG windowed reads rather than downloading entire files
@@ -64,6 +64,7 @@ These tutorials are designed for:
 - **MRDEM**: Medium Resolution Digital Elevation Model
 - **CCMEO**: Canada Center for Mapping and Earth Observation, Natural Resources Canada
 - **AOI**: Area of Interest
+
 
 
 
