@@ -1,0 +1,16 @@
+name: hrdem-stac-access
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - jupyter
+  - notebook
+  - ipykernel
+  - pystac-client
+  - rasterio
+  - rioxarray
+  - xarray
+  - pandas
+  - matplotlib
+  - geopandas
+  - shapely
