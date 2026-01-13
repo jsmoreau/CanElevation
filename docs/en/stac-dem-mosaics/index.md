@@ -6,11 +6,11 @@ This folder contains usage examples for accessing digital elevation models (DEM)
 
 A Spatio-Temporal Asset Catalog (STAC) is a standardized specification for organizing and describing geospatial data assets. STAC catalogs make it easier to search for, discover, and access geospatial datasets without needing to download entire datasets upfront. For cloud-based geospatial workflows, STAC is particularly powerful when combined with Cloud Optimized GeoTIFFs (COGs), which allow efficient remote data access via HTTP range requests.
 
-## Why STAC for HRDEM Mosaics?
+## Why STAC for DEM Mosaics?
 
 The HRDEM mosaics available through the CCMEO STAC API offer several advantages:
 
-- **Discovery**: Query available HRDEM collections and filter by geographic extent and temporal coverage
+- **Discovery**: Query available DEM collections and filter by geographic extent and temporal coverage
 - **Efficiency**: Access only the data you need through COG windowed reads rather than downloading entire files
 - **Integration**: Seamlessly integrate with cloud-based workflows and processing pipelines
 - **Standardization**: Use standardized STAC tools and libraries across different data providers
@@ -64,5 +64,6 @@ These tutorials are designed for:
 - **MRDEM**: Medium Resolution Digital Elevation Model
 - **CCMEO**: Canada Center for Mapping and Earth Observation, Natural Resources Canada
 - **AOI**: Area of Interest
+
 
 
