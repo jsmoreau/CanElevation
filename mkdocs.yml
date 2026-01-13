@@ -51,7 +51,7 @@ plugins:
             Generate a DEM: Générer un MNE
             Get Projects and Tiles by AOI: Obtenir les projets et les tuiles d'une région
             QGIS Interactive Guide: Utilisation intéractive dans QGIS
-            STAC HRDEM Mosaics: Mosaïques MNEHR via STAC
+            STAC DEM Mosaics: Mosaïques MNE via STAC
             Accessing STAC with Python: Accès à STAC avec Python
             Accessing STAC with QGIS: Accès à STAC avec QGIS
             Vertical Transformations: Transformations verticales
@@ -75,7 +75,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - STAC HRDEM Mosaics:
+  - STAC DEM Mosaics:
     - Overview: stac-dem-mosaics/index.md
     - Accessing STAC with Python: stac-dem-mosaics/accessing-stac-with-python.md
     - Accessing STAC with QGIS: stac-dem-mosaics/accessing-stac-with-qgis.md
@@ -97,4 +97,5 @@ extra:
       lang: en
     - name: Français  
       link: ./fr/
+
       lang: fr
