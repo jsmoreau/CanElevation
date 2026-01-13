@@ -1,11 +1,11 @@
 # Documentation CanÉlévation
 
-Bienvenue dans la documentation de la série CanÉlévation. Ce site fournit des guides complets et des exemples pour travailler avec les données d'élévation canadiennes, incluant les nuages de points LiDAR et les transformations verticales.
+Bienvenue dans la documentation de la série CanÉlévation. Ce site fournit des guides complets et des exemples pour travailler avec les données d'élévation canadiennes, incluant les modèles numériques d'élévation (MNE) et les nuages de points LiDAR. Il inclut également une section portant sur les transformations de datum verticaux.
 
 ## Démarrage rapide
 
 * [Nuages de points](pointclouds/index.md) - Exemples d'utilisation des données de nuages de points LiDAR
-* [Mosaïques HRDEM via STAC](stac-dem-mosaics/index.md) - Accéder aux mosaïques DEM haute résolution via STAC
+* [Mosaïques MNE via STAC](stac-dem-mosaics/index.md) - Accéder aux mosaïques MNE CanElevation via STAC
 * [Transformations verticales](vertical-transformations/index.md) - Guides pour les transformations de datums verticaux
 
 ## À propos de CanÉlévation
@@ -14,7 +14,7 @@ La série CanÉlévation fournit des données d'élévation de haute qualité po
 
 ## Information sur le dépôt
 
-Cette documentation est construite à partir du dépôt GitHub CanÉlévation et inclut :
+Cette documentation est construite à partir du [dépôt GitHub CanÉlévation](https://github.com/NRCan/CanElevation) et inclut :
 
 * Des notebooks Jupyter interactifs pour le traitement des données
 * Des guides étape par étape pour les transformations verticales
