@@ -14,7 +14,7 @@ By the end of this guide, you will be able to:
 
 - Install and configure the QGIS STAC API Browser plugin
 - Connect to the CCMEO STAC API endpoint
-- Browse available DEM collections (1m, 2m, 30m, LiDAR)
+- Browse available DEM collections
 - Search for DEM tiles by geographic extent
 - Load COG tiles directly into QGIS
 - Export tiles for offline use
@@ -177,6 +177,7 @@ To view the different assets available for an item, click on **View assets**
 ### CCMEO Resources
 - [CCMEO Datacube](https://datacube.services.geo.ca/)
 - [HRDEM Mosaic Product](https://open.canada.ca/data/en/dataset/0fe65119-e96e-4a57-8bfe-9d9245fba06b)
+- [MRDEM Product](https://open.canada.ca/data/en/dataset/18752265-bda3-498c-a4ba-9dfe68cb98da)
 
 ---
 
@@ -184,6 +185,9 @@ To view the different assets available for an item, click on **View assets**
 
 - **STAC**: Spatio-Temporal Asset Catalog
 - **COG**: Cloud Optimized GeoTIFF
+- **DEM**: Digital Elevation Model
 - **HRDEM**: High Resolution Digital Elevation Model
+- **MRDEM**: Medium Resolution Digital Elevation Model
 - **CCMEO**: Canada Center for Mapping and Earth Observation
 - **CRS**: Coordinate Reference System
+
