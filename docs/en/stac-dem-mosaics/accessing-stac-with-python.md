@@ -1,4 +1,4 @@
-# Accessing HRDEM STAC Mosaics with Python
+# Accessing DEM STAC Mosaics with Python
 
 This guide demonstrates how to programmatically access CanElevation's digital elevation model (DEM) mosaics from the CCMEO STAC catalog using Python libraries.
 
@@ -246,6 +246,9 @@ vsis3_options = {'GDAL_DISABLE_READDIR_ON_OPEN': 'YES'}
 
 - **STAC**: Spatio-Temporal Asset Catalog
 - **COG**: Cloud Optimized GeoTIFF
+- **DEM**: Digital Elevation Model
 - **HRDEM**: High Resolution Digital Elevation Model
+- **MRDEM**: Medium Resolution Digital Elevation Model
 - **CCMEO**: Canada Center for Mapping and Earth Observation
 - **AOI**: Area of Interest
+
