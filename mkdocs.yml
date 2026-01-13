@@ -75,15 +75,15 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - STAC HRDEM Mosaics:
+    - Overview: stac-dem-mosaics/index.md
+    - Accessing STAC with Python: stac-dem-mosaics/accessing-stac-with-python.md
+    - Accessing STAC with QGIS: stac-dem-mosaics/accessing-stac-with-qgis.md
   - Point Clouds:
     - Overview: pointclouds/index.md
     - Generate a DEM: pointclouds/dem-from-copc-lidar.md
     - Get Projects and Tiles by AOI: pointclouds/projects-tiles-by-aoi.md
     - QGIS Interactive Guide: pointclouds/qgis-interactive.md
-  - STAC HRDEM Mosaics:
-    - Overview: stac-dem-mosaics/index.md
-    - Accessing STAC with Python: stac-dem-mosaics/accessing-stac-with-python.md
-    - Accessing STAC with QGIS: stac-dem-mosaics/accessing-stac-with-qgis.md
   - Vertical Transformations:
     - Overview: vertical-transformations/index.md
     - Environment Setup: vertical-transformations/environment-setup.md
