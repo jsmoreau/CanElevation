@@ -16,6 +16,11 @@ This repository contains:
 
 ## Key Features
 
+### STAC DEM Mosaics
+
+- Discover how to search, access, and mosaic Digital Elevation Models (DEMs) using STAC (SpatioTemporal Asset Catalog) APIs
+- Example workflows for integrating STAC-based DEMs into your analysis
+
 ### Point Cloud Processing
 - Creating Digital Elevation Models (DEMs) from LiDAR data
 - Working with COPC (Cloud Optimized Point Cloud) formats

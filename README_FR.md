@@ -16,13 +16,20 @@ Ce dépôt contient :
 
 ## Fonctionnalités principales
 
+### Mosaïques MNE avec STAC
+
+- Apprenez à rechercher, accéder et assembler des Modèles Numériques d'Élévation (MNE) à l'aide des API STAC (SpatioTemporal Asset Catalog)
+- Exemples de flux de travail pour intégrer des MNE basés sur STAC dans vos analyses
+
 ### Traitement de nuages de points
+
 - Création de modèles numériques d'élévation (MNE) à partir de données LiDAR
 - Travail avec les formats COPC (Cloud Optimized Point Cloud)
 - Filtrage et classification des données de nuages de points
 - Intégration avec QGIS pour la visualisation
 
 ### Transformations verticales
+
 - Conversion entre les datums verticaux canadiens (CGVD2013, CGVD28)
 - Transformations basées sur des rasters
 - Conversions de datums et d'époque pour nuages de points
