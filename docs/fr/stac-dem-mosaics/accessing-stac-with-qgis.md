@@ -14,7 +14,7 @@ Ce guide démontre comment utiliser QGIS pour parcourir et accéder de manière 
 
 - Installer et configurer le plugin QGIS STAC API Browser
 - Vous connecter au point de service API STAC du CCCOT
-- Parcourir les collections MNE disponibles (1m, 2m, 30m, LiDAR)
+- Parcourir les collections MNE disponibles
 - Rechercher des tuiles MNE par étendue géographique
 - Charger des tuiles COG directement dans QGIS
 - Exporter des tuiles pour une utilisation hors ligne
@@ -177,6 +177,7 @@ Pour voir les différentes ressources disponibles pour un élément, cliquez sur
 
 - [Datacube CCCOT](https://datacube.services.geo.ca/)
 - [Produit Mosaïque MNEHR](https://open.canada.ca/data/fr/dataset/0fe65119-e96e-4a57-8bfe-9d9245fba06b)
+- [Produit MRDEM](https://ouvert.canada.ca/data/fr/dataset/18752265-bda3-498c-a4ba-9dfe68cb98da)
 
 ---
 
@@ -184,7 +185,9 @@ Pour voir les différentes ressources disponibles pour un élément, cliquez sur
 
 - **STAC**: Catalogue Spatio-Temporel d'Actifs
 - **COG**: GeoTIFF Optimisé pour le Cloud
+- **MNE**: Modèle Numérique d'Élévation
 - **MNEHR**: Modèle Numérique d'Élévation Haute Résolution
 - **MNEMR**: Modèle Numérique d'Élévation de Moyenne Résolution
 - **CCCOT**: Centre Canadien de Cartographie et d'Observation de la Terre
 - **SCR**: Système de Coordonnées de Référence
+
