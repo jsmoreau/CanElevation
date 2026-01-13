@@ -1,6 +1,6 @@
-# Accès aux mosaïques STAC MNEHR avec Python
+# Accès aux mosaïques STAC MNE avec Python
 
-Ce guide démontre comment accéder par programmation aux mosaïques de Modèles Numériques d'Élévation Haute Résolution (MNEHR) de l'API STAC du CCCOT en utilisant des modules Python.
+Ce guide démontre comment accéder par programmation aux mosaïques de modèles numériques d'élévation de la série CanElevation par l'entremise de l'API STAC du CCCOT en utilisant des modules Python.
 
 !!! info "Accès au notebook"
     [📓 Télécharger le notebook Jupyter](./HRDEM_STAC_Access_FR.ipynb){ .md-button .md-button--primary }
@@ -247,7 +247,9 @@ vsis3_options = {'GDAL_DISABLE_READDIR_ON_OPEN': 'YES'}
 
 - **STAC**: Catalogue Spatio-Temporel d'Actifs
 - **COG**: GeoTIFF Optimisé pour le Cloud
+- **MNE**: Modèle Numérique d'Élévation
 - **MNEHR**: Modèle Numérique d'Élévation Haute Résolution
 - **MNEMR**: Modèle Numérique d'Élévation de Moyenne Résolution
 - **CCCOT**: Centre Canadien de Cartographie et d'Observation de la Terre, Ressources naturelles Canada
 - **ZOI**: Zone d'Intérêt
+
