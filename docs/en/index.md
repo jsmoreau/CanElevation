@@ -5,6 +5,7 @@ Welcome to the CanElevation Series documentation. This site provides comprehensi
 ## Quick Start
 
 * [Point Clouds](pointclouds/index.md) - Usage examples for LiDAR point cloud data
+* [STAC DEM Mosaics](stac-dem-mosaics/index.md) - Access high-resolution DEM mosaics via STAC
 * [Vertical Transformations](vertical-transformations/index.md) - Guides for vertical datum transformations
 
 ## About CanElevation
@@ -18,4 +19,5 @@ This documentation is built from the CanElevation GitHub repository and includes
 * Interactive Jupyter notebooks for data processing
 * Step-by-step guides for vertical transformations  
 * LiDAR point cloud usage examples
+* STAC API access guides for cloud-optimized DEM data
 * Multilingual documentation (English and French)

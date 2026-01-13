@@ -1,16 +1,26 @@
-name: CanElevation_PointClouds
+name: canelevation-tutorials
 channels:
   - conda-forge
-  - defaults
 dependencies:
-  - gdal
-  - geopandas
-  - ipyleaflet
-  - matplotlib
+  - python=3.11
+  - jupyter
   - notebook
+  - ipykernel
+  # COPC/Point cloud processing
+  - laspy
+  - lazrs-python
   - pdal
-  - pip
-  - pyproj
   - python-pdal
-  - requests
+  - pyproj
+  # STAC and raster processing
+  - pystac-client
+  - rasterio
   - rioxarray
+  - xarray
+  # Geospatial and data processing
+  - geopandas
+  - shapely
+  - pandas
+  - numpy
+  # Visualization
+  - matplotlib
