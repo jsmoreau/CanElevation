@@ -10,7 +10,7 @@ Un Spatio-Temporal Asset Catalog (STAC) est une spécification standardisée pou
 
 Les mosaïques MNE disponibles par l'intermédiaire de l'API STAC du CCMEO offrent plusieurs avantages:
 
-- **Découverte**: Interroger les collections MNEHR disponibles et filtrer par étendue géographique et couverture temporelle
+- **Découverte**: Interroger les collections MNE disponibles et filtrer par étendue géographique et couverture temporelle
 - **Efficacité**: Accédez uniquement aux données dont vous avez besoin par le biais de lectures COG par fenêtre plutôt que de télécharger des fichiers entiers
 - **Intégration**: Intégrez facilement avec les flux de travail et les pipelines de traitement basés sur le cloud
 - **Normalisation**: Utilisez des outils et des bibliothèques STAC standardisés auprès de différents fournisseurs de données
@@ -64,4 +64,5 @@ Ces tutoriels sont conçus pour :
 - **MNEMR**: Modèle Numérique d'Élévation de Moyenne Résolution
 - **CCCOT**: Centre Canadien de Cartographie et d'Observation de la Terre, Ressources naturelles Canada
 - **ZOI**: Zone d'Intérêt
+
 
