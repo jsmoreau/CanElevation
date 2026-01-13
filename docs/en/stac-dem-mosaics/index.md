@@ -1,6 +1,6 @@
 # STAC DEM Mosaics - CanElevation Series - Usage examples
 
-This folder contains usage examples for accessing High Resolution Digital Elevation Model (HRDEM) mosaics from the CanElevation Series through the CCMEO STAC (Spatio-Temporal Asset Catalog) API. The examples demonstrate how to discover and programmatically access Cloud Optimized GeoTIFF (COG) data files using Python, as well as interactive methods using QGIS.
+This folder contains usage examples for accessing digital elevation models (DEM) mosaics from the CanElevation Series through the CCMEO STAC (Spatio-Temporal Asset Catalog) API. The examples demonstrate how to discover and programmatically access Cloud Optimized GeoTIFF (COG) data files using Python, as well as interactive methods using QGIS.
 
 ## What is STAC?
 
@@ -29,7 +29,7 @@ The STAC API provides access to the following DEM mosaic collections:
 - **hrdem-mosaic-2m**: Mosaic of High Resolution Digital Elevation Model (HRDEM) at 2m
 - **hrdem-lidar**: High Resolution DEM by lidar acquisition projects at 1m
 - **hrdem-arcticdem** Mosaic of High Resolution Digital Elevation Model (HRDEM) generated from optical stereo imagery (ArcticDEM)
-- **mrdem-30**: Medium resolution digital elevation model - 30 meters (MRDEM-30)
+- **mrdem-30**: Medium resolution digital elevation model - 30m (MRDEM-30)
 
 These collections contain Cloud Optimized GeoTIFF files organized by geographic tiles, making it easy to access data for specific regions of interest.
 
@@ -59,7 +59,10 @@ These tutorials are designed for:
 
 - **STAC**: Spatio-Temporal Asset Catalog
 - **COG**: Cloud Optimized GeoTIFF
+- **DEM**: Digital Elevation Model
 - **HRDEM**: High Resolution Digital Elevation Model
+- **MRDEM**: Medium Resolution Digital Elevation Model
 - **CCMEO**: Canada Center for Mapping and Earth Observation, Natural Resources Canada
 - **AOI**: Area of Interest
+
 
