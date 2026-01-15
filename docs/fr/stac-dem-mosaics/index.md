@@ -25,11 +25,11 @@ Les mosaïques MNE disponibles par l'intermédiaire de l'API STAC du CCMEO offre
 
 L'API STAC donne accès aux collections MNE suivantes:
 
-- **hrdem-mosaic-1m**: Mosaïque du Modèle Numérique d'Élévation Haute Résolution (MNEHR) à 1m
-- **hrdem-mosaic-2m**: Mosaïque du Modèle Numérique d'Élévation Haute Résolution (MNEHR) à 2m
-- **hrdem-lidar**: Mosaïque du Modèle Numérique d'Élévation Haute Résolution (MNEHR) par projet d'acquisition LiDAR
-- **hrdem-arcticdem**: Mosaïque du Modèle Numérique d'Élévation Haute Résolution (MNEHR) générée à partir d'images stéréo optiques (ArcticDEM)
-- **mrdem-30**: Modèle numérique d'élévation de moyenne résolution à 30m (MNEMR-30)
+- **[hrdem-mosaic-1m](https://datacube.services.geo.ca/stac/api/collections/hrdem-mosaic-1m)**: Mosaïque du Modèle Numérique d'Élévation Haute Résolution (MNEHR) à 1m
+- **[hrdem-mosaic-2m](https://datacube.services.geo.ca/stac/api/collections/hrdem-mosaic-2m)**: Mosaïque du Modèle Numérique d'Élévation Haute Résolution (MNEHR) à 2m
+- **[hrdem-lidar](https://datacube.services.geo.ca/stac/api/collections/hrdem-lidar)**: Mosaïque du Modèle Numérique d'Élévation Haute Résolution (MNEHR) par projet d'acquisition LiDAR
+- **[hrdem-arcticdem](https://datacube.services.geo.ca/stac/api/collections/hrdem-arcticdem)**: Mosaïque du Modèle Numérique d'Élévation Haute Résolution (MNEHR) générée à partir d'images stéréo optiques (ArcticDEM)
+- **[mrdem-30](https://datacube.services.geo.ca/stac/api/collections/mrdem-30)**: Modèle numérique d'élévation de moyenne résolution à 30m (MNEMR-30)
 
 Ces collections contiennent des fichiers Cloud Optimized GeoTIFF organisés par tuiles géographiques, ce qui facilite l'accès aux données pour des régions d'intérêt spécifiques.
 
