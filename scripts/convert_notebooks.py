@@ -144,22 +144,22 @@ def main():
         {
             'source': 'docs/en/pointclouds/DEM_from_COPC_lidar_EN.ipynb',
             'output': 'docs/en/pointclouds/dem-from-copc-lidar.md',
-            'download': './DEM_from_COPC_lidar_EN.ipynb'  # Relative to the markdown file
+            'download': '../DEM_from_COPC_lidar_EN.ipynb'  # Relative to the markdown file
         },
         {
             'source': 'docs/fr/pointclouds/DEM_from_COPC_lidar_FR.ipynb',
             'output': 'docs/fr/pointclouds/dem-from-copc-lidar.md',
-            'download': './DEM_from_COPC_lidar_FR.ipynb'
+            'download': '../DEM_from_COPC_lidar_FR.ipynb'
         },
         {
             'source': 'docs/en/pointclouds/Get_Projects_Tiles_by_AOI_EN.ipynb',
             'output': 'docs/en/pointclouds/projects-tiles-by-aoi.md',
-            'download': './Get_Projects_Tiles_by_AOI_EN.ipynb'
+            'download': '../Get_Projects_Tiles_by_AOI_EN.ipynb'
         },
         {
             'source': 'docs/fr/pointclouds/Get_Projects_Tiles_by_AOI_FR.ipynb',
             'output': 'docs/fr/pointclouds/projects-tiles-by-aoi.md',
-            'download': './Get_Projects_Tiles_by_AOI_FR.ipynb'
+            'download': '../Get_Projects_Tiles_by_AOI_FR.ipynb'
         }
     ]
     

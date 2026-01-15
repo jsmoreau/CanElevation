@@ -3,7 +3,7 @@
 This guide demonstrates how to programmatically access CanElevation's digital elevation model (DEM) mosaics from the CCMEO STAC catalog using Python libraries.
 
 !!! info "Notebook Access"
-    [📓 Download Jupyter Notebook](./HRDEM_STAC_Access_EN.ipynb){ .md-button .md-button--primary }
+    <a class="md-button md-button--primary" href="../HRDEM_STAC_Access_EN.ipynb" download>📓 Download Jupyter Notebook</a>
     
 !!! warning "Static Preview"
     This is a static preview of the notebook. Download the original notebook file to run the code interactively.
@@ -15,7 +15,7 @@ This guide demonstrates how to programmatically access CanElevation's digital el
 Install the required Python libraries using the provided conda environment file:
 
 !!! info "Files"
-    [📄 Download environment.yml](../assets/env/environment.yml){ .md-button .md-button--primary }
+    <a class="md-button md-button--primary" href="../../assets/env/environment.yml" download>📄 Download environment.yml</a>
 
 ```bash
 conda env create -f environment.yml
