@@ -3,7 +3,7 @@
 Ce guide démontre comment accéder par programmation aux mosaïques de modèles numériques d'élévation de la série CanElevation par l'entremise de l'API STAC du CCCOT en utilisant des modules Python.
 
 !!! info "Accès au notebook"
-    [📓 Télécharger le notebook Jupyter](./HRDEM_STAC_Access_FR.ipynb){ .md-button .md-button--primary }
+    <a class="md-button md-button--primary" href="../HRDEM_STAC_Access_FR.ipynb" download>📓 Télécharger le notebook Jupyter</a>
     
 !!! warning "Aperçu statique"
     Ceci est un aperçu statique du notebook. Téléchargez le fichier notebook original pour exécuter le code de manière interactive.
@@ -15,7 +15,7 @@ Ce guide démontre comment accéder par programmation aux mosaïques de modèles
 Installez les modules Python requis en utilisant le fichier d'environnement conda fourni:
 
 !!! info "Fichiers"
-    [📄 Télécharger environment.yml](../assets/env/environment.yml){ .md-button .md-button--primary }
+    <a class="md-button md-button--primary" href="../../../assets/env/environment.yml" download>📄 Télécharger environment.yml</a>
 
 ```bash
 conda env create -f environment.yml

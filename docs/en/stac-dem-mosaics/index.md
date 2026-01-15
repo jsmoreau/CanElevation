@@ -25,11 +25,11 @@ The DEM mosaics available through the CCMEO STAC API offer several advantages:
 
 The STAC API provides access to the following DEM mosaic collections:
 
-- **hrdem-mosaic-1m**: Mosaic of High Resolution Digital Elevation Model (HRDEM) at 1m
-- **hrdem-mosaic-2m**: Mosaic of High Resolution Digital Elevation Model (HRDEM) at 2m
-- **hrdem-lidar**: High Resolution DEM by lidar acquisition projects at 1m
-- **hrdem-arcticdem** Mosaic of High Resolution Digital Elevation Model (HRDEM) generated from optical stereo imagery (ArcticDEM)
-- **mrdem-30**: Medium resolution digital elevation model - 30m (MRDEM-30)
+- **[hrdem-mosaic-1m](https://datacube.services.geo.ca/stac/api/collections/hrdem-mosaic-1m)**: Mosaic of High Resolution Digital Elevation Model (HRDEM) at 1m
+- **[hrdem-mosaic-2m](https://datacube.services.geo.ca/stac/api/collections/hrdem-mosaic-2m)**: Mosaic of High Resolution Digital Elevation Model (HRDEM) at 2m
+- **[hrdem-lidar](https://datacube.services.geo.ca/stac/api/collections/hrdem-lidar)**: Mosaic of High Resolution Digital Elevation Model (HRDEM) by LiDAR acquisition project
+- **[hrdem-arcticdem](https://datacube.services.geo.ca/stac/api/collections/hrdem-arcticdem)**: Mosaic of High Resolution Digital Elevation Model (HRDEM) generated from optical stereo imagery (ArcticDEM)
+- **[mrdem-30](https://datacube.services.geo.ca/stac/api/collections/mrdem-30)**: Medium Resolution Digital Elevation Model at 30m (MRDEM-30)
 
 These collections contain Cloud Optimized GeoTIFF files organized by geographic tiles, making it easy to access data for specific regions of interest.
 

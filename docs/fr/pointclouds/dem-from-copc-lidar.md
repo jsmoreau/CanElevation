@@ -1,5 +1,5 @@
 !!! info "Accès au notebook"
-    [📓 Télécharger le notebook Jupyter](./DEM_from_COPC_lidar_FR.ipynb){ .md-button .md-button--primary }
+    [📓 Télécharger le notebook Jupyter](../DEM_from_COPC_lidar_FR.ipynb){ .md-button .md-button--primary }
     
 !!! warning "Aperçu statique"
     Ceci est un aperçu statique du notebook. Téléchargez le fichier notebook original pour exécuter le code de manière interactive.

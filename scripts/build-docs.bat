@@ -37,6 +37,8 @@ if not exist "docs\en\pointclouds" mkdir docs\en\pointclouds
 if not exist "docs\fr\pointclouds" mkdir docs\fr\pointclouds
 if not exist "docs\en\vertical-transformations" mkdir docs\en\vertical-transformations
 if not exist "docs\fr\vertical-transformations" mkdir docs\fr\vertical-transformations
+if not exist "docs\en\stac-dem-mosaics" mkdir docs\en\stac-dem-mosaics
+if not exist "docs\fr\stac-dem-mosaics" mkdir docs\fr\stac-dem-mosaics
 
 REM Check if Python is installed
 python --version >nul 2>&1
