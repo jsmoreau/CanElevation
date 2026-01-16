@@ -16,6 +16,7 @@ This guide demonstrates how to use ArcGIS Pro to interactively browse and access
 ## Learning Objectives
 
 By the end of this guide, you will be able to:
+
 - Connect to the CCMEO STAC API endpoint
 - Browse available DEM collections
 - Search for DEM tiles by assets and geographic extent
@@ -73,20 +74,25 @@ By the end of this guide, you will be able to:
 
 ### Filtering Options in Explore STAC Pane
 
+![Filtering options overview](../assets/images/stac-arcpro-search-filtering-options.png)
+
 #### Search by Assets
 
 - For each STAC collection, click **Select assets**
 
-![Asset selection interface](../assets/images/stac-arcpro-explore-stac-select-assets.png)
+![Asset selection interface](../assets/images/stac-arcpro-explore-stac-view-assets.png)
 
 - Select desired assets
+
+![Choose assets](../assets/images/stac-arcpro-explore-stac-select-assets.png)
+
 - Click OK to save preferences
 
 #### Search by Geographic Extent
 
-![Filtering options overview](../assets/images/stac-arcpro-search-filtering-options.png)
 
 **Method A:** Use Map Canvas Extent
+
 - Navigate to area of interest in ArcGIS Pro map canvas
 - In Explore STAC pane, expand **Extent** and select **Current Display Extent**
 - Current map extent will fill (North, West, East, South) fields
@@ -96,6 +102,7 @@ By the end of this guide, you will be able to:
 - Click **View Results**
 
 **Method B:** Define Extents Manually
+
 - In Explore STAC pane, expand Extent and select **As Specified Below**
 - Enter (North, West, East, South) manually
 
@@ -119,7 +126,8 @@ By the end of this guide, you will be able to:
 
 - Refresh by clicking **View Results**
 
-**For each item in Results:**
+**For each item in the Results window, you can view**
+
 - **Thumbnail:** Preview image (if available)
 
 ![Item thumbnail preview](../assets/images/stac-arcpro-explore-stac-results-item-thumbnail.png)
@@ -161,7 +169,9 @@ By the end of this guide, you will be able to:
 ### Connection Issues
 
 **Problem:** Cannot connect to STAC API
+
 **Solutions:**
+
 - Verify URL: https://datacube.services.geo.ca/stac/api/
 - Check internet and firewall
 - Try accessing URL in a browser
@@ -171,7 +181,9 @@ By the end of this guide, you will be able to:
 ### Catalog Navigation
 
 **Problem:** Cannot see STAC connection in Catalog pane
+
 **Solutions:**
+
 - Ensure Catalog pane is open: `View > Catalog Pane`
 - Restart ArcGIS Pro and try again
 - Verify the connection was created successfully
@@ -179,7 +191,9 @@ By the end of this guide, you will be able to:
 ### Collection Discovery
 
 **Problem:** No collections appearing in search results
+
 **Solutions:**
+
 - Verify internet connection is active
 - Check STAC API status at https://datacube.services.geo.ca/stac/api/
 - Try a simpler search term
@@ -187,7 +201,9 @@ By the end of this guide, you will be able to:
 ### Data Loading
 
 **Problem:** COG tiles fail to load
+
 **Solutions:**
+
 - Only DEM collections (hrdem-*, mrdem-*) are currently supported for loading in ArcGIS Pro. There is a known bug preventing other STAC collections from being loaded. Please use DEM collections only.
 - Verify the COG URL is accessible in your browser
 - Check that your map canvas CRS is compatible with the data (EPSG:3979 - LCC NAD83 CSRS)
@@ -196,7 +212,9 @@ By the end of this guide, you will be able to:
 ### Performance Issues
 
 **Problem:** Slow response times or freezing
+
 **Solutions:**
+
 - Start with lower resolution data (e.g., `mrdem-30`) before working with high-resolution data
 - Limit search extent to reduce number of tiles loaded
 - Cache data locally using the export function for repeated use
@@ -205,7 +223,9 @@ By the end of this guide, you will be able to:
 ### Export Failures
 
 **Problem:** Export Raster operation fails
+
 **Solutions:**
+
 - Verify sufficient disk space is available in the output directory
 - Ensure you have write permissions to the destination folder
 - Check that the output format (GeoTIFF) is supported
@@ -242,6 +262,3 @@ By the end of this guide, you will be able to:
 - **CRS (Coordinate Reference System):** A system for defining positions on Earth using coordinates; essential for accurate spatial data representation and analysis
 - **AOI (Area of Interest):** The geographic region being analyzed or studied in a project
 
----
-
-**UNCLASSIFIED - NON CLASSIFIÉ**
