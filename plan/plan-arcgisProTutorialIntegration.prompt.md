@@ -270,6 +270,7 @@ Before proceeding to French translation, user should review and validate:
 - Technical acronyms (STAC, COG) - only translate the definitions in glossary
 - Image filenames and paths
 - API endpoints
+- **UI Element Names and Function Names:** All ArcGIS Pro interface elements, menus, panels, buttons, and field names MUST remain in English (e.g., "Catalog pane", "View > Catalog Pane", "Explore STAC", "Select assets", "Map Canvas Extent", "Current Display Extent", "Results", "Parameters", "Items per page", etc.). This ensures users can match the French text with the English UI they see in ArcGIS Pro. Follow the same pattern as the French QGIS tutorial.
 
 **Standard Translations:**
 - "Prerequisites" → "Prérequis"
