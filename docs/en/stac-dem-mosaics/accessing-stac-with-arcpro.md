@@ -247,7 +247,7 @@ By the end of this guide, you will be able to:
 
 - [CCMEO STAC API](https://datacube.services.geo.ca/stac/api/) ↗️
 - [Cloud Optimized GeoTIFFs (COG) Specification](https://www.cogeo.org/) ↗️
-- [ArcGIS Pro Documentation](https://pro.arcgis.com/en/pro-app/latest/help/welcome.htm) ↗️
+- [ArcGIS Pro Documentation](https://pro.arcgis.com/en/pro-app/latest/get-started/get-started.htm) ↗️
 
 ---
 
