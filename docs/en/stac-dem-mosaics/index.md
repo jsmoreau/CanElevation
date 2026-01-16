@@ -43,6 +43,10 @@ These collections contain Cloud Optimized GeoTIFF files organized by geographic 
 
   Discover how to use QGIS to interactively browse the STAC catalog, search for DEM tiles, and load them directly into your QGIS project without command-line tools.
 
+* [Accessing STAC with ArcGIS Pro](./accessing-stac-with-arcpro.md)
+
+  Learn how to use ArcGIS Pro to interactively browse and access DEM mosaics through the CCMEO STAC catalog with a visual interface for discovering, previewing, and loading tiles directly into your project.
+
 
 ## Target Audience
 
