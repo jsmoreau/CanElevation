@@ -43,6 +43,10 @@ Ces collections contiennent des fichiers Cloud Optimized GeoTIFF organisés par 
 
   Découvrez comment utiliser QGIS pour parcourir interactivement le catalogue STAC, rechercher des tuiles MNEHR et les charger directement dans votre projet QGIS sans outils en ligne de commande.
 
+* [Accéder à STAC avec ArcGIS Pro](./accessing-stac-with-arcpro.md)
+
+  Découvrez comment utiliser ArcGIS Pro pour parcourir et accéder interactivement aux mosaïques MNE par le biais du catalogue STAC du CCMEO avec une interface visuelle pour découvrir, prévisualiser et charger les tuiles directement dans votre projet.
+
 
 ## Public cible
 

@@ -54,6 +54,7 @@ plugins:
             STAC DEM Mosaics: Mosaïques MNE via STAC
             Accessing STAC with Python: Accès à STAC avec Python
             Accessing STAC with QGIS: Accès à STAC avec QGIS
+            Accessing STAC with ArcGIS Pro: Accès à STAC avec ArcGIS Pro
             Vertical Transformations: Transformations verticales
             Environment Setup: Préparation de l'environnement
             Raster Transformations: Transformations matricielles
@@ -79,6 +80,7 @@ nav:
     - Overview: stac-dem-mosaics/index.md
     - Accessing STAC with Python: stac-dem-mosaics/accessing-stac-with-python.md
     - Accessing STAC with QGIS: stac-dem-mosaics/accessing-stac-with-qgis.md
+    - Accessing STAC with ArcGIS Pro: stac-dem-mosaics/accessing-stac-with-arcpro.md
   - Point Clouds:
     - Overview: pointclouds/index.md
     - Generate a DEM: pointclouds/dem-from-copc-lidar.md
